@@ -1,4 +1,3 @@
-﻿
 ![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
@@ -20,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -56,29 +55,29 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 Duration: 15 minutes
 
-To complete this lab, you must verify that your account has sufficient permissions to the Azure subscription that you intend to use to deploy all required Azure resources. You also need to identify the availability of the SUSE Linux Enterprise Server image that you will use to deploy Azure VMs.
+To complete this lab, you must verify that your account has sufficient permissions to the Azure subscription you intend to use to deploy all required Azure resources. You also need to identify the availability of the SUSE Linux Enterprise Server image you will use to deploy Azure VMs.
 
 ### Task 1: Validate the owner role assignment in the Azure subscription
 
 1.  From the lab computer, start a web browser, navigate to the Azure portal at <http://portal.azure.com>, sign in with credentials you will be using in this lab. 
 
-1.  In the Azure portal, use the **Search resources, services, and docs** text box to search for **Subscriptions** and, in the list of results, select **Subscriptions**.
+2.  In the Azure portal, use the **Search resources, services, and docs** text box to search for **Subscriptions** and, in the list of results, select **Subscriptions**.
 
-1.  On the **Subscriptions** blade, select the name of the subscription you intend to use for this lab.
+3.  On the **Subscriptions** blade, select the name of the subscription you intend to use for this lab.
 
-1.  On the subscription blade, select **Access control (IAM)**.
+4.  On the subscription blade, select **Access control (IAM)**.
 
-1.  Switch to the **Role assignments** tab, review the list of role assignments, and verify that your user account has the Owner role assigned to it.
+5.  Switch to the **Role assignments** tab, review the list of role assignments, and verify that your user account has the Owner role assigned to it.
 
 ### Task 2: Validate availability of the SUSE Linux Enterprise Server image 
 
 1.  In the Azure portal at <http://portal.azure.com>, select the **Cloud Shell** icon.
 
-1.  If prompted, in the **Welcome to Azure Cloud Shell** window, select **Bash (Linux)**.
+2.  If prompted, in the **Welcome to Azure Cloud Shell** window, select **Bash (Linux)**.
 
-1.  If prompted, in the **You have no storage mounted** window, select **Create storage**.
+3.  If prompted, in the **You have no storage mounted** window, select **Create storage**.
 
-1.  Once the storage account gets provisioned, at the Bash prompt, run the following: where the `<location>` placeholder designates the target Azure region that you intend to use for this lab (e.g. `eastus`), and verify the output includes an existing image:
+4.  Once the storage account gets provisioned, at the Bash prompt, run the following: where the `<location>` placeholder designates the target Azure region that you intend to use for this lab (e.g. `eastus`), and verify the output includes an existing image:
 
     ```sh
     az vm image list --location <location> --publisher SUSE --offer SLES-SAP --sku 12-SP3 --all --output table
@@ -94,47 +93,47 @@ To complete this lab, you must verify that your account has sufficient permissio
     az vm list-usage --location <location> --query "[?localName == 'Standard DSv2 Family vCPUs' || localName == 'Standard ESv3 Family vCPUs'].{VMFamily:localName, currentValue:currentValue, Limit:limit}" --output table
     ``` 
    
-1.  Review the output of the command executed in the previous step and ensure that you have at least 6 available vCPUs in the **Standard DSv2 Family** VM family and at least 24 available vCPUs in the **Standard ESv3 Family** in the target Azure region.
+2.  Review the output of the command executed in the previous step and ensure that you have at least 6 available vCPUs in the **Standard DSv2 Family** VM family and at least 24 available vCPUs in the **Standard ESv3 Family** in the target Azure region.
 
-1.  If the number of vCPUs is not sufficient, in the Azure portal, navigate back to the subscription blade, and select **Usage + quotas**. 
+3.  If the number of vCPUs is not sufficient, in the Azure portal, navigate back to the subscription blade, and select **Usage + quotas**. 
 
-1.  On the subscription's **Usage + quotas** blade, select **Request Increase**.
+4.  On the subscription's **Usage + quotas** blade, select **Request Increase**.
 
-1.  On the **Basic** blade, specify the following and select **Next: Solutions >**:
+5.  On the **Basic** blade, specify the following and select **Next: Solutions >**:
 
     -   Issue type: **Service and subscription limits (quotas)**
 
-    -   Subscription: the name of the Azure subscription you will be using in this lab.
+    -   Subscription: The name of the Azure subscription you will be using in this lab.
 
     -   Quota type: **Compute-VM (cores-vCPUs) subscription limit increases**
 
-    -   Support plan: the name of the support plan associated with the target subscription.
+    -   Support plan: The name of the support plan associated with the target subscription.
 
-1.  On the **Details** blade, select the **Provide details** link.
+6.  On the **Details** blade, select the **Provide details** link.
 
-1.  On the **Quota details** blade, specify the following and select **Save and continue**:
+7.  On the **Quota details** blade, specify the following and select **Save and continue**:
 
     -   Deployment model: **Resource Manager**
 
-    -   Location: the target Azure region you intend to use in this lab.
+    -   Location: The target Azure region you intend to use in this lab.
 
     -   Types: **Standard**
 
     -   Standard: **DSv2 Series** 
     
-    -   New vCPU Limit: the new limit
+    -   New vCPU Limit: The new limit.
 
     -   Standard: **ESv3 Series**
 
-    -   New vCPU Limit: the new limit
+    -   New vCPU Limit: The new limit.
 
-1.  Back on the **Details** blade, specify the following and select **Next: Review + create >**:
+8.  Back on the **Details** blade, specify the following and select **Next: Review + create >**:
 
     -   Severity: **C - Minimal impact**
 
-    -   Preferred contact method: choose your preferred option and provide your contact details
+    -   Preferred contact method: Choose your preferred option and provide your contact details.
     
-1.  On the **Review + create** blade, select **Create**.
+9.  On the **Review + create** blade, select **Create**.
 
    > **Note**: It might take a few days for quota increase requests to be completed.
 
@@ -142,7 +141,7 @@ To complete this lab, you must verify that your account has sufficient permissio
 
 1.  From the lab computer, start a Web browser, navigate to **SAP Software Downloads** at https://launchpad.support.sap.com/#/softwarecenter/ and log on using your SAP Online Service System account.
 
-1.  In the **SAP Software Download** portal, verify that you have access to the following software packages:
+2.  In the **SAP Software Download** portal, verify that you have access to the following software packages:
 
     -   SAPCAR 7.21 SAPCAR for Linux x86_64 (SAPCAR_1311-80000935.EXE)
 
