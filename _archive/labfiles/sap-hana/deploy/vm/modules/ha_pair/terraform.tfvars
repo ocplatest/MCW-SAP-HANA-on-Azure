@@ -1,4 +1,4 @@
-# Azure region to deploy resource in; please choose the same region as your storage from step 3 (example: "westus2")
+# Azure region to deploy resource in; please choose the same region as your storage from step 3 (example: "westus2") 
 az_region = "VAR_LOCATION"
 
 # Name of resource group to deploy (example: "demo1")
