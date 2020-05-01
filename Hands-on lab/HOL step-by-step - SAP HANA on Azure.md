@@ -916,10 +916,6 @@ In this exercise, you will validate the deployment of the highly-available HANA 
 
     ![In the Configuration and Monitoring view, on the Overview tab, details display for SAP HANA.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image35.png "SAP HANA Administration Console, Overview tab")
 
-1.  In **SAP HANA Administration Console**, navigate to the **System Replication** sub-tab of the **Landscape** tab of the **Configuration and Monitoring** view. Note that replication status indicates that the communication channel is closed.
-
-    ![In the Configuration and Monitoring view, on the System Repliation sub-tab of the Landscape tab, details display replication status errors for SAP HANA.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image36.png "SAP HANA Administration Console, Landscape tab")
-
     > **Note**: You might need to wait a few minutes before the operational state is identified.
 
 1.  Switch to the lab computer, in the Azure portal, navigate to the **Virtual machines** blade, start the virtual machine you stopped earlier in this task and wait until it is running again.
