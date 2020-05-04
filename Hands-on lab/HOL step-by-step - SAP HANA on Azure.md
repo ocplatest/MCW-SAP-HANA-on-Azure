@@ -746,7 +746,7 @@ In this exercise, you will validate the deployment of the highly-available HANA 
 
     ![On the Systems node, HN1 (System) is selected. From its right-click menu, Configuration and Monitoring is selected.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image15.png "Systems node")
 
-15.  In the **Configuration and Monitoring** view, examine the **Overview** tab. Verify that all services are started, active, and in sync. You might need to wait a few minutes before the operational state is identified.
+15. In the **Configuration and Monitoring** view, examine the **Overview** tab. Verify that all services are started, active, and in sync. You might need to wait a few minutes before the operational state is identified.
 
     ![In the Configuration and Monitoring view, on the Overview tab, all services are started, active, and in sync.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image16.png "SAP HANA Administration Console, Overview tab")
 
