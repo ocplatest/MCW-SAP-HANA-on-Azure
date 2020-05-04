@@ -160,7 +160,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     az storage container create --name sapbits --account-key $MEDIA_STORAGE_ACCOUNT_KEY --account-name $MEDIA_STORAGE_ACCOUNT_NAME --public-access blob
     ``` 
 
-10.  In the Azure portal, navigate to the newly created storage account. On the storage account blade, select **Blobs** in the **Blob service** section, select **sapbits** entry representing the container you created in the previous step, and then, on the **sapbits** blade, select **Upload**.
+10. In the Azure portal, navigate to the newly created storage account. On the storage account blade, select **Blobs** in the **Blob service** section, select **sapbits** entry representing the container you created in the previous step, and then, on the **sapbits** blade, select **Upload**.
 
 11.  From the **Upload blob**, upload the HANA media files you downloaded from **SAP Software Downloads** at the beginning of this task.
 
@@ -256,7 +256,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     LOCATION=$(az group show --name $MEDIA_RESOURCE_GROUP_NAME --query location --output tsv)
     ``` 
 
-10.  In the Cloud Shell pane, from the Bash prompt, run the following to create the resource group that will host all resources deployed in this task:
+10. In the Cloud Shell pane, from the Bash prompt, run the following to create the resource group that will host all resources deployed in this task:
 
     ```sh
     HANA_V1_SN_RESOURCE_GROUP_NAME='hanav1sn-RG'
@@ -265,25 +265,25 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
     > **Note**: If needed, this step can be automated as well. Terraform (as well as Azure Resource Manager) templates can be configured to create resource groups.
 
-11.  In the Cloud Shell pane, from the Bash prompt, run the following to generate a pseudo-random name that will be used as a prefix for DNS names assigned to public IP address resources deployed in this task:
+11. In the Cloud Shell pane, from the Bash prompt, run the following to generate a pseudo-random name that will be used as a prefix for DNS names assigned to public IP address resources deployed in this task:
 
     ```sh
     DOMAIN_NAME=hanav1sn$RANDOM
     ``` 
 
-12.  In the Cloud Shell pane, from the Bash prompt, run the following to specify the size of the Azure VM to be used to host the single node HANA instance deployed in this task:
+12. In the Cloud Shell pane, from the Bash prompt, run the following to specify the size of the Azure VM to be used to host the single node HANA instance deployed in this task:
 
     ```sh
     VM_SIZE='Standard_E8s_v3'
     ``` 
 
-13.  In the Cloud Shell pane, from the Bash prompt, run the following to specify the name of the root user account for the Linux VM deployed in this task:
+13. In the Cloud Shell pane, from the Bash prompt, run the following to specify the name of the root user account for the Linux VM deployed in this task:
 
     ```sh
     VM_USERNAME='labuser'
     ``` 
 
-14.  In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
+14. In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
 
     ```sh
     sed -i "s/VAR_RESOURCE_GROUP/$HANA_V1_SN_RESOURCE_GROUP_NAME/" ./terraform.tfvars
@@ -293,13 +293,13 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     sed -i "s/VAR_VM_USERNAME/$VM_USERNAME/" ./terraform.tfvars
     ```
 
-15.  In the Cloud Shell pane, from the Bash prompt, run the following to identify the name of the storage account containing the media files, which you configured and populated in the previous task of this exercise:
+15. In the Cloud Shell pane, from the Bash prompt, run the following to identify the name of the storage account containing the media files, which you configured and populated in the previous task of this exercise:
 
     ```sh
     STORAGE_ACCOUNT_NAME=$(az storage account list --resource-group $MEDIA_RESOURCE_GROUP_NAME --query "[?starts_with(name,'hana')].[name]" --output tsv)
     ```
 
-16.  In the Cloud Shell pane, from the Bash prompt, run the following to specify the names of the software packages you uploaded to the storage account in the previous task of this exercise:
+16. In the Cloud Shell pane, from the Bash prompt, run the following to specify the names of the software packages you uploaded to the storage account in the previous task of this exercise:
 
     ```sh
     SAPCAR_LINUX_NAME='SAPCAR_1311-80000935.EXE'
@@ -311,7 +311,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
     > **Note**: The packages listed above might be superseded by newer versions. If so, ensure to adjust accordingly the names of these packages. 
 
-17.  In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
+17. In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
 
     ```sh
     SAPCAR_LINUX_URL='https://'$STORAGE_ACCOUNT_NAME'.blob.core.windows.net/sapbits/'$SAPCAR_LINUX_NAME
@@ -331,7 +331,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     sed -i "s/VAR_HANA_STUDIO_WINDOWS_URL/$HANA_STUDIO_WINDOWS_URL_REGEX/" ./terraform.tfvars
     ```
 
-18.  In the Cloud Shell pane, from the Bash prompt, run the following to set the values of passwords for user accounts that will be used to manage the single-node HANA instance:
+18. In the Cloud Shell pane, from the Bash prompt, run the following to set the values of passwords for user accounts that will be used to manage the single-node HANA instance:
 
     ```sh
     SAPADMUSER_PASSWORD='Lab@pa55hv1.0'
@@ -343,7 +343,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     WINDOWS_ADMIN_PASSWORD='Lab@pa55hv1.0'
     ```
 
-19.  In the Cloud Shell pane, from the Bash prompt, run the following to add the password values to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
+19. In the Cloud Shell pane, from the Bash prompt, run the following to add the password values to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
 
     ```sh
     sed -i "s/VAR_SAPADMUSER_PASSWORD/$SAPADMUSER_PASSWORD/" ./terraform.tfvars
@@ -433,7 +433,7 @@ In this exercise, you will validate the single-node HANA deployment you performe
 
         ![The Specify System dialog box displays with the previously defined settings.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image7.png "Specify System dialog box")
 
-10.  In the **Connection Properties** dialog box, select the **Authentication by database user** option, specify the following information, and select **Finish**.
+10. In the **Connection Properties** dialog box, select the **Authentication by database user** option, specify the following information, and select **Finish**.
 
     -   User Name: **SYSTEM**
 
@@ -441,11 +441,11 @@ In this exercise, you will validate the single-node HANA deployment you performe
 
         ![The Connection Properties dialog box displays with the previously defined settings.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image8.png "Connection Properties dialog box")
 
-11.  Once you successfully connected to **hn1-hdb0** as **SYSTEM**, select the **HN1 (SYSTEM)** node and select the **Administration** icon in the Systems toolbar and then select **Open Default Administration**.
+11. Once you successfully connected to **hn1-hdb0** as **SYSTEM**, select the **HN1 (SYSTEM)** node and select the **Administration** icon in the Systems toolbar and then select **Open Default Administration**.
 
     ![On the Systems node toolbar, the Administration icon is selected.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image9.png "Systems toolbar")
 
-12.  Review the **Administration** status on the Overview tab and ensure that all services are started.
+12. Review the **Administration** status on the Overview tab and ensure that all services are started.
 
     ![In the Configuration and Monitoring view, on the Overview tab, all services are started, active, and in sync.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image10.png "SAP HANA Administration Console, Overview tab")
 
@@ -560,13 +560,13 @@ You will leverage a number of artifacts that you already implemented earlier in 
     VM_SIZE='Standard_E8s_v3'
     ``` 
 
-10.  In the Cloud Shell pane, from the Bash prompt, run the following to specify the name of the root user account for the Linux VMs deployed in this task:
+10. In the Cloud Shell pane, from the Bash prompt, run the following to specify the name of the root user account for the Linux VMs deployed in this task:
 
     ```sh
     VM_USERNAME='labuser'
     ``` 
 
-11.  In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
+11. In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
 
     ```sh
     sed -i "s/VAR_RESOURCE_GROUP/$HANA_V1_HA_RESOURCE_GROUP_NAME/" ./terraform.tfvars
@@ -576,13 +576,13 @@ You will leverage a number of artifacts that you already implemented earlier in 
     sed -i "s/VAR_VM_USERNAME/$VM_USERNAME/" ./terraform.tfvars
     ```
 
-12.  In the Cloud Shell pane, from the Bash prompt, run the following to identify the name of the storage account containing the media files, which you configured and populated in the previous task of this exercise:
+12. In the Cloud Shell pane, from the Bash prompt, run the following to identify the name of the storage account containing the media files, which you configured and populated in the previous task of this exercise:
 
     ```sh
     STORAGE_ACCOUNT_NAME=$(az storage account list --resource-group $MEDIA_RESOURCE_GROUP_NAME --query "[?starts_with(name,'hana')].[name]" --output tsv)
     ```
 
-13.  In the Cloud Shell pane, from the Bash prompt, run the following to specify the names of the software packages you uploaded to the storage account in the previous task of this exercise:
+13. In the Cloud Shell pane, from the Bash prompt, run the following to specify the names of the software packages you uploaded to the storage account in the previous task of this exercise:
 
     ```sh
     SAPCAR_LINUX_NAME='SAPCAR_1311-80000935.EXE'
@@ -594,7 +594,7 @@ You will leverage a number of artifacts that you already implemented earlier in 
 
     > **Note**: The packages listed above might be superseded by newer versions. If so, ensure to adjust accordingly the names of these packages. 
 
-14.  In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
+14. In the Cloud Shell pane, from the Bash prompt, run the following to add the values you specified to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
 
     ```sh
     SAPCAR_LINUX_URL='https://'$STORAGE_ACCOUNT_NAME'.blob.core.windows.net/sapbits/'$SAPCAR_LINUX_NAME
@@ -614,7 +614,7 @@ You will leverage a number of artifacts that you already implemented earlier in 
     sed -i "s/VAR_HANA_STUDIO_WINDOWS_URL/$HANA_STUDIO_WINDOWS_URL_REGEX/" ./terraform.tfvars    
     ```
 
-15.  In the Cloud Shell pane, from the Bash prompt, run the following to set the values of passwords for user accounts that will be used to manage the single-node HANA instance:
+15. In the Cloud Shell pane, from the Bash prompt, run the following to set the values of passwords for user accounts that will be used to manage the single-node HANA instance:
 
     ```sh
     SAPADMUSER_PASSWORD='Lab@pa55hv1.0'
@@ -627,7 +627,7 @@ You will leverage a number of artifacts that you already implemented earlier in 
     HA_CLUSTER_NODES_PASSWORD='Lab@pa55hv1.0'
     ```
 
-16.  In the Cloud Shell pane, from the Bash prompt, run the following to add the password values to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
+16. In the Cloud Shell pane, from the Bash prompt, run the following to add the password values to the terraform.tfvars file that contains variables used by Terraform deployment performed in this task:
 
     ```sh
     sed -i "s/VAR_SAPADMUSER_PASSWORD/$SAPADMUSER_PASSWORD/" ./terraform.tfvars
@@ -716,7 +716,7 @@ In this exercise, you will validate the deployment of the highly-available HANA 
 
     ![The SAP HANA Administration Console displays the empty Systems and Properties nodes, and the Systems menu.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image6.png "SAP HANA Administration Console")
 
-10.  In the Specify System dialog box, specify the following information, and select **Next**.
+10. In the Specify System dialog box, specify the following information, and select **Next**.
 
     -   Host Name: **hdbha**
 
@@ -724,7 +724,7 @@ In this exercise, you will validate the deployment of the highly-available HANA 
 
         ![The Specify System dialog box displays with the previously defined settings.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image12.png "Specify System dialog box")
 
-11.  In the **Connection Properties** dialog box, select the **Authentication by database user** option, specify the following information, and select **Finish**.
+11. In the **Connection Properties** dialog box, select the **Authentication by database user** option, specify the following information, and select **Finish**.
 
     -   User Name: **SYSTEM**
 
@@ -732,17 +732,17 @@ In this exercise, you will validate the deployment of the highly-available HANA 
 
         ![The Connection Properties dialog box displays with the previously defined settings.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image8.png "Connection Properties dialog box")
 
-12.  Once you successfully connected to **HN1** as **SYSTEM**, select the **HN1 (SYSTEM)** node and select the **System Monitor** icon in the Systems toolbar.
+12. Once you successfully connected to **HN1** as **SYSTEM**, select the **HN1 (SYSTEM)** node and select the **System Monitor** icon in the Systems toolbar.
 
     ![On the Systems node toolbar, the System Monitor icon is selected.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image13.png "Systems toolbar")
 
-13.  Review the **System Monitor** view.
+13. Review the **System Monitor** view.
 
     ![The SAP HANA Administration Console System Monitor tab displays the System Monitor status.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image14.png "SAP HANA Administration Console, System Monitor tab")
 
     > **Note**: It typically takes a few minutes before the operational state is fully identified.
    
-14.  Right select the **HN1 (SYSTEM)** node and in the right select menu. Next, select **Configuration and Monitoring** followed by **Open Administration**.
+14. Right select the **HN1 (SYSTEM)** node and in the right select menu. Next, select **Configuration and Monitoring** followed by **Open Administration**.
 
     ![On the Systems node, HN1 (System) is selected. From its right-click menu, Configuration and Monitoring is selected.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image15.png "Systems node")
 
@@ -750,7 +750,7 @@ In this exercise, you will validate the deployment of the highly-available HANA 
 
     ![In the Configuration and Monitoring view, on the Overview tab, all services are started, active, and in sync.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image16.png "SAP HANA Administration Console, Overview tab")
 
-16.  Switch to the **Alerts** tab, and verify they are not indicating any operational issues.
+16. Switch to the **Alerts** tab, and verify they are not indicating any operational issues.
 
     ![On the SAP HANA Administration Console Alerts tab, no operational issues display.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image17.png "SAP HANA Administration Console, Alerts tab")
 
@@ -791,23 +791,23 @@ In this exercise, you will validate the deployment of the highly-available HANA 
     sudo passwd hacluster
     ```
 
-10.  Switch to the Remote Desktop session to hn1-win-bastion Azure VM, start **Internet Explorer**, and browse to **https://hn1-hdb0:7630**. On the **SUSE Hawk Sign in** page, sign in as **hacluster** with the password **Lab\@pa55hv1.0**.
+10. Switch to the Remote Desktop session to hn1-win-bastion Azure VM, start **Internet Explorer**, and browse to **https://hn1-hdb0:7630**. On the **SUSE Hawk Sign in** page, sign in as **hacluster** with the password **Lab\@pa55hv1.0**.
 
     > **Note**: Ignore any prompts regarding problems with security certificate of the target website. It is expected in this scenario.
 
-11.  Once you sign in, review the **Resources** tab on the **Status** page.
+11. Once you sign in, review the **Resources** tab on the **Status** page.
 
     ![On the Status page, the Resources tab shows several resources in varying states of readiness.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image18.png "Status page, Resources tab")
 
-12.  Next, switch to the **Nodes** tab on the **Status** page.
+12. Next, switch to the **Nodes** tab on the **Status** page.
 
     ![On the Status page, the Nodes tab is selected, and displays two nodes..](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image19.png "Status page, Nodes tab")
 
-13.  Switch back to the **Resources** and use the magnifying glass icon to examine the state of the HANA resources starting with the **SAPHANATopology**.
+13. Switch back to the **Resources** and use the magnifying glass icon to examine the state of the HANA resources starting with the **SAPHANATopology**.
 
     ![A page displays with the SAPHANATopology resource details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image20.png "SAPHANATopology resource details page")
 
-14.  Close the **SAPHANATopology** pane and use the magnifying glass icon to examine the state of the **SAPHana** resource.
+14. Close the **SAPHANATopology** pane and use the magnifying glass icon to examine the state of the **SAPHana** resource.
 
     ![A page displays with the SAPHana resource details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image21.png "SAPHana resource details page")
 
@@ -856,7 +856,7 @@ In this exercise, you will validate the deployment of the highly-available HANA 
     exit
     ```
 
-10.  Switch back to the Remote Desktop session to **hn1-win-bastion** Azure VM, switch to the **SUSE Hawk Status** page at **https://hn1-hdb1:7630**, and observe how the **SAPHana** clustered resource status is changing to operational on both hn1-hdb0 and hn1-hdb1 with hn1-hdb1 as the primary (you might need to wait a few minutes for the interface to refresh):
+10. Switch back to the Remote Desktop session to **hn1-win-bastion** Azure VM, switch to the **SUSE Hawk Status** page at **https://hn1-hdb1:7630**, and observe how the **SAPHana** clustered resource status is changing to operational on both hn1-hdb0 and hn1-hdb1 with hn1-hdb1 as the primary (you might need to wait a few minutes for the interface to refresh):
 
     ![On the Resources tab, the SAPHana line now displays a blue dot.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/image25.png "Resources tab")
 
