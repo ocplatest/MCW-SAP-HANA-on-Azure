@@ -24,7 +24,9 @@ At the end of this whiteboard design session you will be able to design SAP HANA
 
 ### Hands-on Lab
 
-At this time, SAP HANA on Azure does not include a lab.  Please look for one to be added in Q4!
+In this hands-on lab, you will step through the implementation of a single node and highly available SAP HANA deployments on Microsoft Azure virtual machines running SUSE Linux Enterprise Server.
+
+After its completion, you will be able to perform single node and highly available SAP HANA deployments by using Terraform and Ansible, validate both types of deployments, test failover scenarios, and remove the deployed resources.
 
 ## Azure services and related products
 - SAP on Azure
