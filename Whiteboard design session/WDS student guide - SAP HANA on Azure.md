@@ -9,7 +9,7 @@ SAP HANA on Azure
 </div>
 
 <div class="MCWHeader3">
-March 2020
+October 2020
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -22,25 +22,143 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
+
 **Contents**
 
 <!-- TOC -->
 
+- [Trainer information](#trainer-information)
+  - [Role of the trainer](#role-of-the-trainer)
+  - [Whiteboard design session flow](#whiteboard-design-session-flow)
+  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
+  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
 - [SAP HANA on Azure whiteboard design session student guide](#sap-hana-on-azure-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Prerequisites](#prerequisites)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Contoso S/4HANA Deployment Priorities](#contoso-s4hana-deployment-priorities)
-        - [Customer needs and objections](#customer-needs-and-objections)
-        - [Key design considerations](#key-design-considerations)
-        - [Infographic for key design concepts](#infographic-for-key-design-concepts)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Prerequisites](#prerequisites)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Contoso S/4HANA Deployment Priorities](#contoso-s4hana-deployment-priorities)
+    - [Customer needs and objections](#customer-needs-and-objections)
+    - [Key design considerations](#key-design-considerations)
+    - [Infographic for key design concepts](#infographic-for-key-design-concepts)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 
 <!-- /TOC -->
+
+# Trainer information
+
+Thank you for taking time to support the whiteboard design sessions as a trainer!
+
+## Role of the trainer
+
+An amazing trainer:
+
+-   Creates a safe environment in which learning can take place.
+
+-   Stimulates the participant's thinking.
+
+-   Involves the participant in the learning process.
+
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants).
+
+-   Ensures individual participant accountability.
+
+-   Ties it all together for the participant.
+
+-   Provides insight and experience to the learning process.
+
+-   Effectively leads the whiteboard design session discussion.
+
+-   Monitors quality and appropriateness of participant deliverables.
+
+-   Effectively leads the feedback process.
+
+## Whiteboard design session flow 
+
+Each whiteboard design session uses the following flow:
+
+**Step 1: Review the customer case study (15 minutes)**
+
+**Outcome**
+
+Analyze your customer's needs.
+
+-   Customer's background, situation, needs and technical requirements
+
+-   Current customer infrastructure and architecture
+
+-   Potential issues, objectives and blockers
+
+**Step 2: Design a proof of concept solution (60 minutes)**
+
+**Outcome**
+
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
+
+-   Determine your target customer audience.
+
+-   Determine customer's business needs to address your solution.
+
+-   Design and diagram your solution.
+
+-   Prepare to present your solution.
+
+**Step 3: Present the solution (30 minutes)**
+
+**Outcome**
+
+Present solution to your customer:
+
+-   Present solution
+
+-   Respond to customer objections
+
+-   Receive feedback
+
+**Wrap-up (15 minutes)**
+
+-   Review preferred solution
+
+## Before the whiteboard design session: How to prepare
+
+Before conducting your first whiteboard design session:
+
+-   Read the Student guide (including the case study) and Trainer guide.
+
+-   Become familiar with all key points and activities.
+
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
+
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
+
+-   Make notes for later.
+
+## During the whiteboard design session: Tips for an effective whiteboard design session
+
+**Refer to the Trainer guide** to stay on track and observe the timings.
+
+**Do not expect to memorize every detail** of the whiteboard design session.
+
+When participants are doing activities, you can **look ahead to refresh your memory**.
+
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
+
+-   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
+
+-   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
+
+***Have fun**! Encourage participants to have fun and share!*
+
+**Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
+
+**Ask questions** and get them to share to fully involve your group in the learning process.
+
+**Ask first**, whenever possible. Before launching into a topic, learn your audience's opinions about it and experiences with it. Asking first enables you to assess their level of knowledge and experience, and leaves them more open to what you are presenting.
+
+**Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
 # SAP HANA on Azure whiteboard design session student guide
 
@@ -48,7 +166,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 In this workshop, you will look at what is involved in deploying SAP HANA on Azure with the goals of designing for in-memory database performance, business continuity and flexibility as well as fully optimized total cost of ownership. 
 
-At the end of this whiteboard design session you will be able to design SAP HANA workloads on Azure in alignment with SAP HANA certification with high availability and disaster recovery, run Azure Pricing Calculator to price the SAP HANA landscape, and present the solution to business/technical decision makers and handle Q&A with customer.  
+At the end of this whiteboard design session you will be able to design SAP HANA workloads on Azure in alignment with SAP HANA certification with high availability and disaster recovery, run Azure Pricing Calculator to price the SAP HANA landscape, and present the solution to business/technical decision makers and handle Q&A with customer. 
 
 ## Prerequisites
 
@@ -78,15 +196,15 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 Contoso Group is a pharmaceutical company with its headquarters based in Boston, US.  
 
-Contoso Leadership and Planning Groups want to drastically reduce server and storage hardware in their own datacenters to minimize IT related costs. Contoso has already a number of their non-SAP systems migrated to Azure. The leadership asked Contoso IT to look into the possibility to deploy its green field S/4HANA environment to cloud. 
+Contoso Leadership and Planning Groups want to drastically reduce server and storage hardware in their own datacenters to minimize IT related costs. Leadership has asked Contoso IT to explore the possibility to deploy a greenfield S/4HANA environment to cloud. In addition to NetWeaver-based apps, Contoso wants to evaluate the option of implementing XSA-based apps. 
 
-Contoso IT decided to leverage its knowledge of the Microsoft cloud platform and existing ExpressRoute connectivity and host its SAP S/4HANA landscape in Azure. 
+Since Contoso already has a number of their non-SAP systems running to Azure, Contoso IT decided to leverage its knowledge of the Microsoft cloud platform and existing ExpressRoute connectivity and host its SAP S/4HANA landscape in Azure. 
 
-Considering that Contoso finance and supply chain teams will strongly rely on S/4HANA, the systems should be highly available, and their performance must be predictable and consistent.  In addition, the management team wants to leverage disaster recovery capabilities offered by Azure in order to ensure resiliency in case the primary region hosting the new deployment becomes unavailable. 
+Considering that Contoso finance and supply chain teams will strongly rely on S/4HANA, the systems should be highly available, and their performance must be predictable and consistent. In addition, the management team wants to leverage disaster recovery capabilities offered by Azure in order to ensure resiliency in case the primary region hosting the new deployment becomes unavailable. 
 
-Andrew Cross, CIO of Contoso Group emphasized this point by stating, "Our operational dependencies on SAP applications force us to seek reasonably priced high availability and disaster recovery capabilities for our production SAP S/4HANA deployments.” 
+Andrew Cross, CIO of Contoso Group emphasized this point by stating, "Our planned operational dependencies on SAP applications force us to seek reasonably priced high availability and disaster recovery capabilities for our production SAP S/4HANA deployments.” 
 
-Before migrating the production environment, Contoso wants to test its new deployment approach by provisioning development, and UAT environments in Azure
+Before implementing the production environment, Contoso wants to test its new deployment approach by provisioning development, and UAT environments in Azure.
 
 ### Contoso S/4HANA Deployment Priorities
 
@@ -96,7 +214,7 @@ Before migrating the production environment, Contoso wants to test its new deplo
 
 -   Data protection & security
 
--   Safe and smooth migration with downtime minimized
+-   Streamlined and automated deployment methodology
 
 -   IT standardization across SAP and non-SAP
 
@@ -156,9 +274,9 @@ Before migrating the production environment, Contoso wants to test its new deplo
 
 1.  Is the proposed solution fully certified by SAP? 
 
-1.  Does the proposal meet Contoso business continuity requirements? What if there’s outage on VM or storage? How can we restore from backup? How can we failover the landscape in case of an outage?
+1.  Does the proposal meet Contoso business continuity requirements? What if there's outage on VM or storage? How can we restore from backup? How can we failover the landscape in case of an outage?
 
-1.  There’re legacy systems on-prem that need to interact with S/4HANA in cloud. How can we minimize performance impact in cross-premises scenarios? 
+1.  There're legacy on-prem systems that need to interact with S/4HANA in cloud. How can we minimize performance impact in cross-premises scenarios? 
 
 1.  Can we change the size of the environment if sizing requirements change in future?
 
@@ -168,7 +286,7 @@ Before migrating the production environment, Contoso wants to test its new deplo
 
 ### Key design considerations
 
-1.  Key design components:
+1.  Key design components
 
     -   HANA System Replication
 
@@ -208,6 +326,8 @@ Before migrating the production environment, Contoso wants to test its new deplo
 
     -   Cluster arbitration (Cloud Witness and SBD)
 
+    -   Proximity placement groups
+
 1.  Pricing
 
     -   Use Azure Pricing Calculator
@@ -226,17 +346,17 @@ Before migrating the production environment, Contoso wants to test its new deplo
 
 ### Infographic for key design concepts
 
-![SAP on Azure - a wide varity of compute instances](images/SoA-WideVerietyofCompute.png "Wide variety of Compute instances")
+![SAP on Azure - a wide varity of compute instances](images/Whiteboarddesignsessionstudentguide-SAPHANAonAzureimages/media/sap_on_azure_wide_variety_compute_instances.png "Wide variety of Compute instances")
 
-![Pick Azure Compute for HANA and Application Servers](images/ComputeforHANAandAppServers.png "Azure Compute for HANA and Application Servers")
+![Pick Azure Compute for HANA and Application Servers](images/Whiteboarddesignsessionstudentguide-SAPHANAonAzureimages/media/sap_on_azure_pick_compute_hana_and_app_servers.png "Azure Compute for HANA and Application Servers")
 
-![Azure VM types to meet sizing requirements](images/VMtypesforSizingRequirements.png "Azure VM types to meet sizing requirements")
+![Azure VM types to meet sizing requirements](images/Whiteboarddesignsessionstudentguide-SAPHANAonAzureimages/media/sap_on_azure_vm_sizing_requirements.png "Azure VM types to meet sizing requirements")
 
-![Premium Storage to run HANA on M series VM](images/PremiumStorageforMseriesVM.png "Premium Storage config to run HANA on M series VM")
+![Premium Storage to run HANA on M series VM](images/Whiteboarddesignsessionstudentguide-SAPHANAonAzureimages/media/sap_on_azure_premium_storage_hana.png "Premium Storage config to run HANA on M series VM")
 
-![S/4HANA HA in Availability Sets and DR across regions](images/S4HANAinASandcrossRegionDR.png "S/4HANA HA in Availability Sets and DR across regions")
+![S/4HANA HA in Availability Sets and DR across regions](images/Whiteboarddesignsessionstudentguide-SAPHANAonAzureimages/media/sap_on_azure_hana_dr_across_regions.png "S/4HANA HA in Availability Sets and DR across regions")
 
-![S/4HANA HA and DR across Availability Zones](images/S4HANAHAandDRacrossAZs.png "S/4HANA HA and DR across Availability Zones")
+![S/4HANA HA and DR across Availability Zones](images/Whiteboarddesignsessionstudentguide-SAPHANAonAzureimages/media/sap_on_azure_hana_dr_across_zones.png "S/4HANA HA and DR across Availability Zones")
 
 ## Step 2: Design a proof of concept solution
 
@@ -260,9 +380,9 @@ Directions: With all participants at your table, respond to the following questi
 
 *High-level solution architecture:*
 
-1.  What should be the Azure region(s) where the solution will be deployed?
-
 1.  How would you ensure that the high-availability and disaster recovery requirements are satisfied?
+
+1.  What should be the Azure region(s) where the solution will be deployed?
 
 *Network design:*
 
@@ -278,7 +398,7 @@ Directions: With all participants at your table, respond to the following questi
 
 *Solution cost:*
 
-1.  What is the estimated cost of your solution? Provide pricing for *HA/DR* and *cost conscious** (without HA/DR) options.
+1.  What is the estimated cost of your solution? Provide pricing for *HA/DR* and *cost conscious* (without HA/DR) options.
 
 **Prepare**
 
