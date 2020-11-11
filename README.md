@@ -27,7 +27,7 @@ At the end of this whiteboard design session you will be able to design SAP HANA
 
 ### Hands-on Lab
 
-In this hands-on lab, you will deploy stand-alone and highly-available SAP HANA environments in Azure by using Terraform and Ansible.  Following each deployment, you will review the resulting configuration.  For highly-available deployment, you will test several differnt failover scenarios in order to validate resiliency of the SAP HANA Pacemaker-based cluster
+In this hands-on lab, you will deploy stand-alone and highly-available SAP HANA environments in Azure by using Terraform and Ansible.  Following each deployment, you will review the resulting configuration.  For highly-available deployment, you will test several different failover scenarios in order to validate resiliency of the SAP HANA Pacemaker-based cluster
 
 ## Azure services and related products
 - SAP on Azure
