@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-� 2020 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -73,7 +73,7 @@ HANA single-node deployment
 
 HANA highly available deployment
 
-![Solution architecture to setup SAP HANA on Azure consisting of a highly available HANA instance.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/clustered-hana-instance-architecture.png "highly-available HANA instance solution architecture diagram")
+![Solution architecture to setup SAP HANA on Azure consisting of a highly available HANA instance.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/clustered-hana-instance-architecture.png "Highly-available HANA instance solution architecture diagram")
 
 ## Requirements
 
@@ -582,7 +582,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     1 S  1001 28295     1  0  80   0 - 177521 -     ?        00:00:00 hdbrsutil
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to use the locally installed HANA DB client to sign in to the **systemdb** database with the **SYSTEM** user credentials (when prompted for its password, type **Manager1**):
+1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to use the locally installed HANA DB client to sign into the **systemdb** database with the **SYSTEM** user credentials (when prompted for its password, type **Manager1**):
 
     ```sh
     hdbsql -d systemdb -u SYSTEM
@@ -598,7 +598,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
 1.  From the **hdbsql SYSTEMDB=\>** prompt, type **quit** to exit the HANA DB client.
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to sign in to the locally installed SAP HANA XS Advanced environment (when prompted, provide the password **Manager1** for the **XSA_ADMIN** user):
+1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to sign into the locally installed SAP HANA XS Advanced environment (when prompted, provide the password **Manager1** for the **XSA_ADMIN** user):
 
     ```sh
     cd /hana/shared/HN1/xs/bin
@@ -1084,7 +1084,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     su - hn1adm
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to sign in to the locally installed SAP HANA XS Advanced environment (when prompted, provide the password **Manager1** for the **XSA_ADMIN** user):
+1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to sign into the locally installed SAP HANA XS Advanced environment (when prompted, provide the password **Manager1** for the **XSA_ADMIN** user):
 
     ```sh
     cd /hana/shared/HN1/xs/bin
@@ -1566,7 +1566,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     > **Note**: At this point, the **msl_SAPHana_HN1_HDB00** resource uses only a single-node (**hdb1-1**). To allow failback to **hdb1-0**, you need to first remove the constraints that were generated automatically when you initiated the migration task. 
 
-1.  To remove constraints, use the vertical menu on the left-hand side of the **SUSE Hawk Status** to switch to the **Edit Configuration** page and display it’s **Constraints** tab. 
+1.  To remove constraints, use the vertical menu on the left-hand side of the **SUSE Hawk Status** to switch to the **Edit Configuration** page and display its **Constraints** tab. 
 
     ![The Constraints tab is selected on the Edit Configuration page.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_post_migration_constraints.png "Edit Configuration page")
 
