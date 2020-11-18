@@ -139,8 +139,8 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     rm ubuntu_azurecli_vm_template.json -f
     rm ubuntu_azurecli_vm_template.parameters.json -f
 
-    wget https://raw.githubusercontent.com/polichtm/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/ubuntu_azurecli_vm_template.json
-    wget https://raw.githubusercontent.com/polichtm/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/ubuntu_azurecli_vm_template.parameters.json
+    wget https://raw.githubusercontent.com/microsoft/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/ubuntu_azurecli_vm_template.json
+    wget https://raw.githubusercontent.com/microsoft/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/ubuntu_azurecli_vm_template.parameters.json
     ```
 
 1.  In the **Bash** session in the **Cloud Shell** pane, run the following to provision the Azure VM that will host the lab deployment tools:
@@ -270,7 +270,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 1.  In the SSH session to the Azure VM, run the following to download into the current directory the Azure Resource Manager template and the corresponding parameters file you will use for provisioning of the single-node SAP HANA lab environment:
 
     ```sh
-    curl https://github.com/polichtm/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-sn1.json  --output ./deploy/template_samples/template-sn1.json
+    curl https://github.com/microsoft/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-sn1.json  --output ./deploy/template_samples/template-sn1.json
     ```
 
     > **Note**: The template has the following content:
@@ -755,7 +755,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  In the SSH session to the Azure VM, run the following to download into the current directory the Azure Resource Manager template and the corresponding parameters file you will use for provisioning of the single-node SAP HANA lab environment:
 
     ```sh
-    curl https://github.com/polichtm/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json
+    curl https://github.com/microsoft/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json
     ```
 
     > **Note**: The template has the following content:
