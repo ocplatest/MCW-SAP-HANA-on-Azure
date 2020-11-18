@@ -1498,19 +1498,19 @@ You will leverage a number of artifacts that you implemented in the first exerci
     su - hn1adm
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to ensure that the HANA instance is stopped:
+1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to ensure that the HANA instance is stopped:
 
     ```sh
     sapcontrol -nr 00 -function StopWait 600 10
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to re-configure the local HANA instance as secondary
+1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to re-configure the local HANA instance as secondary
 
     ```sh
     hdbnsutil -sr_register --remoteHost=hdb1-0 --remoteInstance=00 --replicationMode=sync --name=SITE2
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch back to root context and clean up the failed state:
+1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to switch back to root context and clean up the failed state:
 
     ```sh
     exit
