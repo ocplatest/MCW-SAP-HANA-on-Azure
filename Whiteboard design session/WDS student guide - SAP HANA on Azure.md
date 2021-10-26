@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2020 Microsoft Corporation. All rights reserved.
+© 2021 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -67,13 +67,13 @@ Analyze your customer's needs.
 
 Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
+Directions:  With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1.  Meet your table participants and trainer.
+1.  Meet your team members and trainer.
 
-1.  Read all of the directions for steps 1-3 in the student guide.
+2.  Read all directions for steps 1-3 in the student guide.
 
-1.  As a table team, review the following customer case study.
+3.  As a team, review the following customer case study.
 
 ### Customer situation
 
@@ -251,15 +251,15 @@ Timeframe: 60 minutes
 
 **Business needs**
 
-Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
+Directions: With your team, answer the following questions and be prepared to present your solution to others:
 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+1.  Who will you present this solution to? Who is your target customer audience? Who are the decision makers?
 
-1.  What customer business needs do you need to address with your solution?
+2.  What customer business needs do you need to address with your solution?
 
 **Design**
 
-Directions: With all participants at your table, respond to the following questions on a flip chart:
+Directions: With your team, respond to the following questions:
 
 *High-level solution architecture:*
 
@@ -285,13 +285,13 @@ Directions: With all participants at your table, respond to the following questi
 
 **Prepare**
 
-Directions: With all participants at your table:
+Directions: As a team:
 
 1.  Identify any customer needs that are not addressed with the proposed solution.
 
-1.  Identify the benefits of your solution.
+2.  Identify the benefits of your solution.
 
-1.  Determine how you will respond to the customer's objections.
+3.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -307,25 +307,25 @@ Timeframe: 30 minutes
 
 Directions:
 
-1.  Pair with another table.
+1.  Pair with another team.
 
-1.  One table is the Microsoft team and the other table is the customer.
+2.  One group is the Microsoft team and the other is the customer.
 
-1.  The Microsoft team presents their proposed solution to the customer.
+3.  The Microsoft team presents their proposed solution to the customer.
 
-1.  The customer makes one of the objections from the list of objections.
+4.  The customer makes one of the objections from the list of objections.
 
-1.  The Microsoft team responds to the objection.
+5.  The Microsoft team responds to the objection.
 
-1.  The customer team gives feedback to the Microsoft team.
+6.  The customer team gives feedback to the Microsoft team.
 
-1.  Tables switch roles and repeat Steps 2-6.
+7.  Switch roles and repeat Steps 2-6.
 
 ##  Wrap-up 
 
-Timeframe: 20 minutes
+Timeframe: 15 minutes
 
-Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
+Directions: Reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 
