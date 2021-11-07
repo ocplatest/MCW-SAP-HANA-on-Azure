@@ -2,7 +2,7 @@
 
 Contoso, a pharmaceutical company, wants to significantly reduce server and storage hardware in their own datacenters to minimize IT related costs. The leadership asked Contoso IT to look into the possibility of implementing its SAP HANA environment to cloud. Contoso also wants to dramatically simplify the process of provisioning Azure resources, as well as installation and configuration of SAP HANA software components. Contoso IT has been relying on Ansible to manage its on-premises environment and, with the cloud migration plans, it started evaluating the use of Terraform to automate on-premises and cloud-based deployments.
 
-October 2020
+November 2021
 
 ## Target audience
 

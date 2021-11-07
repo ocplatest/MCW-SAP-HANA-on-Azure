@@ -1,4 +1,4 @@
-![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/main/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/main/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 SAP HANA on Azure
@@ -8,7 +8,7 @@ SAP HANA on Azure
 Before the hands-on lab setup guide
 </div>
 
-October 2020
+November 2021
 </div>
 
 
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2020 Microsoft Corporation. All rights reserved.
+© 2021 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -84,7 +84,8 @@ To complete this lab, you must verify that your account has sufficient permissio
 
     ```sh
     LOCATION='[location]`
-    az vm image list --location $LOCATION --publisher SUSE --offer SLES-SAP --sku 12-SP3 --all --output table
+    <!-- az vm image list --location $LOCATION --publisher SUSE --offer SLES-SAP --sku 12-SP3 --all --output table -->
+    az vm image list --location $LOCATION --publisher SUSE --offer sles-sap-12-sp5 --sku gen1 --all --output table
     ``` 
 
     > **Note**: To identify the names of Azure regions, in the **Cloud Shell**, at the Bash prompt, run `az account list-locations --query '[].name' --output tsv`
