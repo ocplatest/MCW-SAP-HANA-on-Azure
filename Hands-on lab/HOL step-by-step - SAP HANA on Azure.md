@@ -571,7 +571,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 1.  Within the SSH session to the Linux jumpbox VM, run the following to connect to the **hdb1-0** Azure VM running HANA by using its private IP address you identified in the previous task:
 
     ```sh
-    ssh azureadm@10.1.1.10
+    ssh azureadm@10.1.1.4
     ```
 
 1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you** (HANA SID in the lab environment is set to **HN1**):
@@ -590,14 +590,14 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
     ```sh
     HDB version info:
-      version:             2.00.050.00.1592305219
+      version:             2.00.057.00.1629894416
       branch:              fa/hana2sp05
       machine config:      linuxx86_64
       git hash:            7daf311088b6a86552a9b0152c9f178d9cfe2ac7
-      git merge time:      2020-06-16 13:00:19
+      git merge time:      2021-08-25 14:26:56
       weekstone:           0000.00.0
       cloud edition:       0000.00.00
-      compile date:        2020-06-16 13:10:42
+      compile date:        2021-08-25 14:39:57
       compile host:        ld5146
       compile type:        rel
     ` ``
@@ -800,7 +800,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ```sh
     <!-- curl https://github.com/microsoft/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json -->
-    curl https://raw.githubusercontent.com/polichtm/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/template-sn1.json  --output ./deploy/v2/template_samples/template-ha1.json
+    curl https://raw.githubusercontent.com/polichtm/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/v2/template_samples/template-ha1.json
     ```
 
     > **Note**: The template has the following content:
@@ -1060,7 +1060,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     SN_RGNAME='hanav2-sn-RG'
     STORAGE_ACCOUNT_ID=$(az storage account list --resource-group $SN_RGNAME --query "[?starts_with(name,'sapbits')].id" -o tsv)
     STORAGE_ACCOUNT_ID_REGEX="$(echo $STORAGE_ACCOUNT_ID | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')"
-    sed -i "s/VAR_STORAGE_ACCOUNT_ID/$STORAGE_ACCOUNT_ID_REGEX/" ./deploy/template_samples/template-ha1.json
+    sed -i "s/VAR_STORAGE_ACCOUNT_ID/$STORAGE_ACCOUNT_ID_REGEX/" ./deploy/v2/template_samples/template-ha1.json
     ```
 
 1.  In the SSH session to the Azure VM, run the following to initialize the Terraform environment:
