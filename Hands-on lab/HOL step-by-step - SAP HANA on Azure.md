@@ -154,7 +154,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
     > **Note**: When prompted, specify a username and its password that you will use to sign into the operating system of the Azure VM.
 
-    > **Note**: Wait until the provisioning completes. This should take about 3 minutes.
+    > **Note**: Wait until the provisioning completes. This should take about 2 minutes.
 
 1.  In the **Bash** session in the **Cloud Shell** pane, run the following to display the public IP address of the Azure VM you deployed in the previous step:
 
@@ -223,7 +223,8 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
     ```sh
     mkdir ~/projects/ && cd $_
-    git clone https://github.com/Azure/sap-hana.git
+    <!-- git clone https://github.com/Azure/sap-hana.git -->
+    git clone https://github.com/polichtm/sap-hana.git
     cd sap-hana/
     ```
 
@@ -270,7 +271,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 1.  In the SSH session to the Azure VM, run the following to download into the current directory the Azure Resource Manager template and the corresponding parameters file you will use for provisioning of the single-node SAP HANA lab environment:
 
     ```sh
-    curl https://github.com/microsoft/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-sn1.json  --output ./deploy/template_samples/template-sn1.json
+    curl https://raw.githubusercontent.com/microsoft/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/template-sn1.json --output ./deploy/template_samples/template-sn1.json
     ```
 
     > **Note**: The template has the following content:
