@@ -10,11 +10,12 @@
             }
         },
         "vmName": {
-            "defaultValue": "azcli-vm0",
-            "type": "String"
+            "type": "String",
+            "defaultValue": "azcli-vm0"
         },
         "adminUsername": {
             "type": "string",
+            "defaultValue": "azureadm",
             "metadata": {
                 "description": "Admin username"
             }
