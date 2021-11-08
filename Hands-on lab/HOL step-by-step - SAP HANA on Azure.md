@@ -1105,7 +1105,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  Within the SSH session to the Linux jumpbox VM, run the following to initiate the Ansible-based provisioning of the lab environment: 
 
     ```sh
-    ansible-playbook -i hosts.yml ~/sap-hana/deploy/ansible/sap_playbook.yml
+    ansible-playbook -i hosts ~/sap-hana/deploy/v2/ansible/sap_playbook.yml
     ```
 
     > **Note**: Wait for the deployment to complete. This should take about 60 minutes.
