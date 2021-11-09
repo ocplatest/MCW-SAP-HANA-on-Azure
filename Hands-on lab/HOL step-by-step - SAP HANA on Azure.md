@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-October 2020
+November 2021
 </div>
 
 
@@ -214,19 +214,18 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
 ### Task 2: Deploy a single node HANA infrastructure by using Terraform
 
-
-
 1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to generate the SSH key pair that will be used to secure access to Linux Azure VMs deployed in this lab (when prompted to specify the location of the file in which to save the key and to specify the passphrase protecting the content of the file, press the **Enter** key three times): 
 
      ```sh
      ssh-keygen -t rsa -b 2048
      ``` 
 
-1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to clone the code you will use to perform the deployment and switch to the directory containing the deployment files:
+1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to clone the code you will use to perform the deployment, switch to the directory containing the deployment files, and grant execute permissions on all directories and files:
 
     ```sh
     git clone https://github.com/polichtm/sap-hana.git
     cd sap-hana/
+    chmod -R +x+X *
     ```
 
 1.  In the SSH session to the Azure VM, run the following to extend the **$PATH** environment variable to include the location of the utility scripts that are part of the cloned repo:
@@ -524,7 +523,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     sudo apt-get install ansible
     ```
 
-1.  Within the SSH session to the Linux jumpbox VM, run the following to open the **~/sap-hana/deploy/ansible/roles/sap-media-download/tasks/main.yml** file:
+1.  Within the SSH session to the Linux jumpbox VM, run the following to open the **~/sap-hana/deploy/v2/ansible/roles/sap-media-download/tasks/main.yml** file:
 
     ```sh
     vi ~/sap-hana/deploy/v2/ansible/roles/sap-media-download/tasks/main.yml
@@ -800,7 +799,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ```sh
     <!-- curl https://github.com/microsoft/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json -->
-    curl https://raw.githubusercontent.com/polichtm/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/v2/template_samples/template-ha1.json
+    curl https://raw.githubusercontent.com/polichtm/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json
     ```
 
     > **Note**: The template has the following content:
@@ -1060,7 +1059,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     SN_RGNAME='hanav2-sn-RG'
     STORAGE_ACCOUNT_ID=$(az storage account list --resource-group $SN_RGNAME --query "[?starts_with(name,'sapbits')].id" -o tsv)
     STORAGE_ACCOUNT_ID_REGEX="$(echo $STORAGE_ACCOUNT_ID | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')"
-    sed -i "s/VAR_STORAGE_ACCOUNT_ID/$STORAGE_ACCOUNT_ID_REGEX/" ./deploy/v2/template_samples/template-ha1.json
+    sed -i "s/VAR_STORAGE_ACCOUNT_ID/$STORAGE_ACCOUNT_ID_REGEX/" ./deploy/template_samples/template-ha1.json
     ```
 
 1.  In the SSH session to the Azure VM, run the following to create a fencing agent service principal for the SAP HANA SID you are provisioning:
@@ -1117,7 +1116,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  Within the SSH session to the Linux jumpbox VM, run the following to initiate the Ansible-based provisioning of the lab environment: 
 
     ```sh
-    ansible-playbook -i hosts ~/sap-hana/deploy/v2/ansible/sap_playbook.yml
+    ansible-playbook -i hosts ~/sap-hana/deploy/ansible/sap_playbook.yml
     ```
 
     > **Note**: Wait for the deployment to complete. This should take about 60 minutes.
