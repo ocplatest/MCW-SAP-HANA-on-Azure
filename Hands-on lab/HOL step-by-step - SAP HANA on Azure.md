@@ -1063,6 +1063,18 @@ You will leverage a number of artifacts that you implemented in the first exerci
     sed -i "s/VAR_STORAGE_ACCOUNT_ID/$STORAGE_ACCOUNT_ID_REGEX/" ./deploy/v2/template_samples/template-ha1.json
     ```
 
+1.  In the SSH session to the Azure VM, run the following to create a fencing agent service principal for the SAP HANA SID you are provisioning:
+
+    ```sh
+    util/create_fencing_agent.sh HN1
+    ```
+
+1.  In the SSH session to the Azure VM, run the following to export environment variables referencing the fencing agent service principal for the SAP HANA SID you are provisioning:
+
+    ```sh
+    source set-clustering-auth-HN1.sh
+    ```
+
 1.  In the SSH session to the Azure VM, run the following to initialize the Terraform environment:
 
     ```sh
@@ -1081,7 +1093,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     terraform_v2.sh apply template-ha1
     ```
 
-    > **Note**: Wait for the deployment to complete. This should take about 10 minutes.
+    > **Note**: Wait for the deployment to complete. This should take about 20 minutes.
 
     > **Note**: Once the deployment completes, the output will include the public IP address of the Linux jumpbox Azure VM included in the Terraform deployment and its administrator's account name, which you will use in the next task. 
 
@@ -1100,6 +1112,18 @@ You will leverage a number of artifacts that you implemented in the first exerci
     export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
     export ANSIBLE_HOST_KEY_CHECKING=False
     source ~/export-clustering-sp-details.sh
+    ```
+
+1.  Within the SSH session to the Linux jumpbox VM, run the following to extend the $PATH environment variable to include the location of the utility scripts that are part of the cloned repo:
+
+    ```sh
+    source util/source_path.sh
+    ```
+
+1.  Within the SSH session to the Linux jumpbox VM, run the following to export environment variables referencing the fencing agent service principal for the SAP HANA SID you are provisioning:
+
+    ```sh
+    source set-clustering-auth-HN1.sh
     ```
 
 1.  Within the SSH session to the Linux jumpbox VM, run the following to initiate the Ansible-based provisioning of the lab environment: 
