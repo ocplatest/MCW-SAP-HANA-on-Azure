@@ -783,10 +783,25 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 ### Task 1: Deploy highly-available Azure infrastructure by using Terraform
 
+1.  In the SSH session to the Azure VM you used for Terraform deployment, run the following to clone the code you will use to perform the deployment, switch to the directory containing the deployment files, and grant execute permissions on all directories and files:
+
+    ```sh
+    cd ~
+    git clone https://github.com/polichtm/sap-hana-mcw.git
+    cd sap-hana-mcw/
+    chmod -R +x+X *
+    ```
+
 1.  In the SSH session to the Azure VM you used for Terraform deployment, run the following to extend the $PATH environment variable to include the location of the utility scripts that are part of the cloned repo:
 
     ```sh
     source util/source_path.sh
+    ```
+
+1.  In the SSH session to the Azure VM, run the following to create an Azure AD service principal that will be used during deployment:
+
+    ```sh
+    create_service_principal.sh sp-hanav2ha
     ```
 
 1.  In the SSH session to the Azure VM, run the following to export the environment variables designating the service principal you created in the previous exercise:
@@ -1092,7 +1107,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     terraform_v2.sh apply template-ha1
     ```
 
-    > **Note**: Wait for the deployment to complete. This should take about 20 minutes.
+    > **Note**: Wait for the deployment to complete. This should take about 10 minutes.
 
     > **Note**: Once the deployment completes, the output will include the public IP address of the Linux jumpbox Azure VM included in the Terraform deployment and its administrator's account name, which you will use in the next task. 
 
@@ -1111,6 +1126,22 @@ You will leverage a number of artifacts that you implemented in the first exerci
     export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
     export ANSIBLE_HOST_KEY_CHECKING=False
     source ~/export-clustering-sp-details.sh
+    ```
+
+1.  Within the SSH session to the Linux jumpbox VM, run the following to set the value of the **configs_path** variable necessary for the Ansible-based scripts to provision the lab environment:
+
+    ```sh
+    echo 'configs_path: ".."' >> ~/sap-hana/deploy/ansible/group_vars/all.yml
+    ```
+
+1.  Within the SSH session to the Linux jumpbox VM, run the following to copy the files necessary for the Ansible-based scripts to provision the lab environment:
+
+    ```sh
+    curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/hdb_sizes.json --output ~/sap-hana/deploy/hdb_sizes.json  
+    curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/components.json --output ~/sap-hana/deploy/components.json
+    curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/app_sizes.json --output ~/sap-hana/deploy/app_sizes.json
+    curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/anydb_sizes.json --output ~/sap-hana/deploy/anydb_sizes.json
+    curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/input.json --output ~/sap-hana/deploy/input.json
     ```
 
 1.  Within the SSH session to the Linux jumpbox VM, run the following to initiate the Ansible-based provisioning of the lab environment: 
