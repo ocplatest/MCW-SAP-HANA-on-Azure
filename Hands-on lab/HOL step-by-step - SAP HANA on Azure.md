@@ -1,4 +1,4 @@
-![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/main/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 SAP HANA on Azure
@@ -1075,18 +1075,6 @@ You will leverage a number of artifacts that you implemented in the first exerci
     STORAGE_ACCOUNT_ID=$(az storage account list --resource-group $SN_RGNAME --query "[?starts_with(name,'sapbits')].id" -o tsv)
     STORAGE_ACCOUNT_ID_REGEX="$(echo $STORAGE_ACCOUNT_ID | sed -e 's/\\/\\\\/g; s/\//\\\//g; s/&/\\\&/g')"
     sed -i "s/VAR_STORAGE_ACCOUNT_ID/$STORAGE_ACCOUNT_ID_REGEX/" ./deploy/template_samples/template-ha1.json
-    ```
-
-1.  In the SSH session to the Azure VM, run the following to create a fencing agent service principal for the SAP HANA SID you are provisioning:
-
-    ```sh
-    util/create_fencing_agent.sh HN1
-    ```
-
-1.  In the SSH session to the Azure VM, run the following to export environment variables referencing the fencing agent service principal for the SAP HANA SID you are provisioning:
-
-    ```sh
-    source set-clustering-auth-HN1.sh
     ```
 
 1.  In the SSH session to the Azure VM, run the following to initialize the Terraform environment:
