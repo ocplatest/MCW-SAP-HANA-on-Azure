@@ -1214,12 +1214,13 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, open the **hosts** file located in **C:\\Windows\\System32\\drivers\\etc** in Notepad.
 
-1.  Add the following entries to the host file (replace the `hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net` with the fully qualified domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
+1.  Add the following entries to the host file (replace the `cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net` with the domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
 
     ```
     10.101.2.10	hdb1-0
     10.101.2.10	hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net
-    10.101.2.10	hdb1-1
+    10.101.2.11	hdb1-1
+    10.101.2.11	hdb1-1.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net
     10.101.2.4	hdbha
     ```
 
@@ -1447,7 +1448,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  Switch to the SSH session to the **hdb1-0** Azure VM, type `exit` to return to the SSH session to the Linux jumpbox Azure VM.
 
-1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-1** Azure VM running HANA by using its private IP address you identified earlier in this task:
+1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-1** Azure VM running HANA by using its private IP address:
 
     ```sh
     ssh azureadm@10.101.1.11
@@ -1467,11 +1468,12 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     > **Note**: You can use any Linux editor based on your preferences.
 
-1.  Within the editor interface, update the value of the **api_url** parameter to reference the **hdb1-1** cluster node and close the file, saving your changes. 
+1.  Within the editor interface, update the value of the **default_domain** and **api_url** parameters to reference the **hdb1-1** cluster node and close the file, saving your changes. 
 
-    > **Note**: The entry you edit should resemble the following (the domain name will be different):
+    > **Note**: The entries you edit should resemble the following (the domain name will be different):
 
     ```sh
+    default_domain = hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net
     api_url = https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net:30030
     ```
 
@@ -1481,6 +1483,8 @@ You will leverage a number of artifacts that you implemented in the first exerci
     cd /hana/shared/HN1/xs/bin    
     XSA reset-certificate
     ```
+
+    > **Note**: Wait for the XSA service to restart. This might take a few minutes.
 
     > **Note**: For details regarding this procedure, refer to [SAP Note #2243019](https://launchpad.support.sap.com/#/notes/2243019)
 
@@ -1499,14 +1503,14 @@ You will leverage a number of artifacts that you implemented in the first exerci
     > **Note**: The output should resemble the following (the domain name will be different):
 
     ```sh
-    xsa-cockpit                   STARTED           1/1         512 MB    <unlimited>   https://hdb1-1.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net:51025
+    xsa-cockpit                   STARTED           1/1         512 MB    <unlimited>   hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net:51025
     ```
 
     > **Note**: Take the note of the URL designating the access point of xsa-cockpit. You will need it next.
 
 1.  Switch back to the Remote Desktop session to the **hanav2jmp-vm0** Azure VM and, start Microsoft Edge, and navigate to the XSA Cockpit URL you identified in the previous step. 
 
-1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to https://hdb1-1.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net (unsafe)**. 
+1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net (unsafe)**. 
 
 1.  On the **SAP HANA XS Advanced** page, sign in as **XSA_ADMIN** with the password **Manager1**.
 
@@ -1514,7 +1518,15 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ![The SAP HANA XS Advanced Cockpit displays the the XSA Host: Home - User Management page with the lab user1.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task5_xsa_new_user_displayed.png "XSA Host: Home - User Management page")
 
-1.  Switch to the SSH session to the **hb1-0** Azure VM and run the following to start the Pacemaker Cluster Resource Manager monitor on the first cluster node:
+1.  Switch to the SSH session to the **hb1-1** Azure VM, type `exit` twice to return to the SSH session to the Linux jumpbox Azure VM.
+
+1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-0** Azure VM running HANA by using its private IP address:
+
+    ```sh
+    ssh azureadm@10.101.1.10
+    ```
+
+1.  From within the SSH session to the **hdb1-0** Azure VM, run the following command to start the Pacemaker Cluster Resource Manager monitor on the first cluster node:
 
     ```sh
     sudo service pacemaker start
@@ -1526,7 +1538,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ![On the Resources tab, the SAPHanaTopology and cln_azure-events resources now include hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task5_hawk_post_pacemaker_restart.png "Resources tab")
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
+1.  Switch to the SSH session to the **hdb1-0** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
 
     ```sh
     su - hn1adm
@@ -1541,7 +1553,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to re-configure the local HANA instance as secondary:
 
     ```sh
-    hdbnsutil -sr_register --remoteHost=hdb1-1 --remoteInstance=00 --replicationMode=sync --name=SITE1 
+    hdbnsutil -sr_register --remoteHost=hdb1-1 --remoteInstance=00 --replicationMode=sync --name=SITE1
     ```
 
 1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch back to root context and clean up the failed state:
@@ -1564,7 +1576,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ![On the Resources tab, the status of the resource has a qustion mark, and its location is hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_stopped_question-mark.png "Resources tab")
 
-    ![On the Resources tab, the status of the resource has a blue dot, and its location is hdb1-1.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_stopped_blue-dot.png "Resources tab")
+    ![On the Resources tab, the status of the resource has a blue dot, and its location is hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_stopped_blue-dot.png "Resources tab")
 
 1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, switch to the **Command Prompt** window and, at the `hdbsql SYSTEMDB=>` prompt, type `\s` and press the **Enter** key to display the local SYSTEMDB information 
 
@@ -1590,7 +1602,9 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     > **Note**: The **msl_SAPHana_HN1_HDB00** resource does not automatically add **hdb1-1** as the passive node. This is expected, since the **AUTOMATED_REGISTER** parameter of the resource is set to **false**. 
 
-1.  Wait until the **hdb1-1** Azure VM is running, switch to the duplicate SSH session and run the following to connect to that Azure VM via its private IP address:
+1.  Wait until the **hdb1-1** Azure VM is running, switch to the SSH session to the **hb1-0** Azure VM, and type `exit` to return to the SSH session to the Linux jumpbox Azure VM.
+
+1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-1** Azure VM running HANA by using its private IP address:
 
     ```sh
     ssh azureadm@10.101.1.11
@@ -1602,26 +1616,26 @@ You will leverage a number of artifacts that you implemented in the first exerci
     su - hn1adm
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to ensure that the HANA instance is stopped:
+1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to ensure that the HANA instance is stopped:
 
     ```sh
     sapcontrol -nr 00 -function StopWait 600 10
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to re-configure the local HANA instance as secondary
+1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to re-configure the local HANA instance as secondary
 
     ```sh
     hdbnsutil -sr_register --remoteHost=hdb1-0 --remoteInstance=00 --replicationMode=sync --name=SITE2
     ```
 
-1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch back to root context and clean up the failed state:
+1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to switch back to root context and clean up the failed state:
 
     ```sh
     exit
     sudo crm resource cleanup msl_SAPHana_HN1_HDB00 hdb1-1
     ```
 
-1.  Switch back to the Remote Desktop session to **hanav2jmp-vm0** Azure VM and, on the **SUSE Hawk Status** page at **https://hdb1-0:7630** note that the **SAPHana** clustered resource is operational on both hdb1-0 and hdb1-1 with hdb1-1 as the primary (you might need to wait a few minutes for the interface to refresh and transition from a question mark to a blue dot displayed next to the msl_SAPHana_HN1_HDB00 resource):
+1.  Switch back to the Remote Desktop session to **hanav2jmp-vm0** Azure VM and, on the **SUSE Hawk Status** page at **https://hdb1-0:7630** note that the **SAPHana** clustered resource is operational on both hdb1-0 and hdb1-1 with hdb1-0 as the primary (you might need to wait a few minutes for the interface to refresh and transition from a question mark to a blue dot displayed next to the msl_SAPHana_HN1_HDB00 resource):
 
     ![On the Resources tab, the msl_SAPHana_HN1_HDB00 line now displays a question mark.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_started_question-mark.png "Resources tab")
 
@@ -1692,7 +1706,15 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ![On the Resources tab, the SAPHanaTopology and cln_azure-events resources now include hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_post_migration_failed_start_error_message.png "Resources tab")
 
-1.  Switch to the SSH session to the **hdb1-0** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
+1.  Switch to the SSH session to the **hb1-1** Azure VM, type `exit` twice to return to the SSH session to the Linux jumpbox Azure VM.
+
+1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-0** Azure VM running HANA by using its private IP address:
+
+    ```sh
+    ssh azureadm@10.101.1.10
+    ```
+
+1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
 
     ```sh
     su - hn1adm
