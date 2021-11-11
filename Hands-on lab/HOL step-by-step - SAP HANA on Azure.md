@@ -1162,7 +1162,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-0** Azure VM running HANA by using its private IP address you identified earlier in this task:
 
     ```sh
-    ssh azureadm@10.101.1.4
+    ssh azureadm@10.101.1.10
     ```
 
 1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
@@ -1187,7 +1187,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     > **Note**: The output should resemble the following:
 
     ```sh
-    xsa-cockpit                   STARTED           1/1         512 MB    <unlimited>   https://hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net:51025
+    xsa-cockpit                   STARTED           1/1         512 MB    <unlimited>    https://hdb1-0.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net:51025
     ```
 
     > **Note**: Take the note of the URL designating the access point of xsa-cockpit. You will need it later in this exercise.
@@ -1202,9 +1202,11 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ```sh
     [communication]
-    default_domain = hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net
-    api_url = https://hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net:30030
+    default_domain = hdb1-0.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net
+    api_url = https://hdb1-0.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net:30030
     ```
+
+1.  Within the SSH session to the **hdb1-0** Azure VM, type `exit` to return to the `azureadm@hdb1-0:~>` prompt.
 
 1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0** which public IP address you identified in the previous task. When prompted, sign in by using the **azureadm** username and the **Sap@hana2019!** password.
 
@@ -1215,13 +1217,13 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  Add the following entries to the host file (replace the `hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net` with the fully qualified domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
 
     ```
-    10.101.2.4	hdb1-0
-    10.101.2.4	hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net
-    10.101.2.5	hdb1-1
-    10.101.2.6	hdbha
+    10.101.2.10	hdb1-0
+    10.101.2.10	hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net
+    10.101.2.10	hdb1-1
+    10.101.2.4	hdbha
     ```
 
-    > **Note**: `10.101.2.6` is the IP address assigned to the front end of the Azure Internal Load Balancer that distributes network traffic to the HANA cluster hosted on two Azure VMs **hdb1-0** and **hdb1-1**.
+    > **Note**: `10.101.2.4` is the IP address assigned to the front end of the Azure Internal Load Balancer that distributes network traffic to the HANA cluster hosted on two Azure VMs **hdb1-0** and **hdb1-1**.
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start Internet Explorer, browse to [Microsoft Edge for Business Download page](https://www.microsoft.com/en-us/edge/business/download), and use it to download and install Microsoft Edge. 
 
@@ -1249,25 +1251,23 @@ You will leverage a number of artifacts that you implemented in the first exerci
     | Priority | **100** |
     | Name | **allow-lab-traffic** |
 
-1.  In the Azure portal, search for and select **Load balancers** and, on the **Load balancers** blade, select the **hana-HN1-lb** entry in the **hanav2-ha-RG** resource group. 
+1.  In the Azure portal, search for and select **Load balancers** and, on the **Load balancers** blade, select the **HN1_hdb-alb** entry in the **hanav2-ha-RG** resource group. 
 
-    > **Note**: Make sure that you select the **hana-HN1-lb** network security group in the **hanav2-ha-RG** resource group (rather than the one in the **hanav2-sn-RG** resource group).
+    > **Note**: The **HN1_hdb-alb** load balancer provides load balancing for connections targeting Azure VMs hosting the HANA databases. In order to proceed with testing in the lab environment, you need to modify the backend pool of the load balancer.
 
-    > **Note**: The **hana-HN1-lb** load balancer provides load balancing for connections targeting Azure VMs hosting the HANA databases. In order to proceed with testing in the lab environment, you need to modify the backend pool of the load balancer.
+1.  On the **HN1_hdb-alb** blade, select **Backend pools**. 
 
-1.  On the **hana-HN1-lb** blade, select **Backend pools**. 
+1.  On the **HN1_hdb-alb \| Backend pools** blade, in the **HN1_hdb-alb-bep** section, select the **HN1_hdbAlb-bePool** link next to the **hdb1-0** entry.
 
-1.  On the **hana-HN1-lb \| Backend pools** blade, in the **hana-HN1-lb-bep** section, select the **hana-HN1-lb-bep** link in the **hdb1-0** section.
+1.  On the **HN1_hdbAlb-bePool** blade, in the **Virtual machines** section, select the **hdb1-0** and the **hdb1-1** checkboxes and select **Remove**.
 
-1.  On the **hana-HN1-lb-bep** blade, in the **Virtual machines** section, select the **hdb1-0** and the **hdb1-1** checkboxes and select **Remove**.
+1.  On the **HN1_hdbAlb-bePool** blade, in the **Virtual machines** section, select **Add**.
 
-1.  On the **hana-HN1-lb-bep** blade, in the **Virtual machines** section, select **Add**.
-
-1.  On the **Add virtual machines to backend pool** blade, select the entry referencing **hdb1-0-admin-nic-ip (10.101.1.4)** and **hdb1-1-admin-nic-ip (10.101.1.5)** and then select **Add**.
+1.  On the **Add virtual machines to backend pool** blade, select the entry referencing **hdb1-0-admin-nic-ip (10.101.1.10)** and **hdb1-1-admin-nic-ip (10.101.1.11)** and then select **Add**.
 
     > **Note**: Make sure to select the IP Configuration entries that reference IP addresses on the **10.101.1.0/24** subnet. This is necessary to allow for the traffic originating from the Windows Server jumpbox Azure VM to reach the backend pool VMs.
 
-1.  Back on the **hana-HN1-lb-bep** blade, select **Save**.
+1.  Back on the **HN1_hdbAlb-bePool** blade, select **Save**.
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start **Microsoft Edge**, and browse to **https://hdb1-0:7630**. 
 
@@ -1305,7 +1305,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start **Microsoft Edge**, and browse to the XSA Cockpit URL you identified earlier in this task.
 
-    > **Note**: The URL should resemble **https://hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net:51025** (the domain name will differ).
+    > **Note**: The URL should resemble **hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net** (the domain name will differ).
 
 1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net (unsafe)**. 
 
@@ -1366,7 +1366,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ```cmd
     cd C:\Program Files\sap\hdbclient
-    hdbsql -n hdbha:30013 -d systemdb -u SYSTEM -p Manager1    
+    hdbsql -n hdbha:30013 -d systemdb -u SYSTEM -p Manager1
     ```
 
     > **Note**: Make sure not to include the `-e` switch since this will result in an untrusted certificate-related error **-10709: Connection failed (RTE:[300015] SSL certificate validation failed: The certificate chain was issued by an authority that is not trusted.**
@@ -1445,7 +1445,15 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     > **Note**: Review the output, including the **sql port** entry, which allows you to identify the target HANA instance. Verify that it includes the reference to **hdb1-1**.
 
-1.  Switch to the SSH session to the **hdb1-1** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
+1.  Switch to the SSH session to the **hdb1-0** Azure VM, type `exit` to return to the SSH session to the Linux jumpbox Azure VM.
+
+1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-1** Azure VM running HANA by using its private IP address you identified earlier in this task:
+
+    ```sh
+    ssh azureadm@10.101.1.11
+    ```
+
+1.  From within to the SSH session to the **hdb1-1** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
 
     ```sh
     su - hn1adm
@@ -1464,7 +1472,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     > **Note**: The entry you edit should resemble the following (the domain name will be different):
 
     ```sh
-    api_url = https://hdb1-1.fyz5ci1dm3lurnjzgn2dsvpb0g.bx.internal.cloudapp.net:30030
+    api_url = https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net:30030
     ```
 
 1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to reset the certificate for the controller API. 
@@ -1498,7 +1506,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  Switch back to the Remote Desktop session to the **hanav2jmp-vm0** Azure VM and, start Microsoft Edge, and navigate to the XSA Cockpit URL you identified in the previous step. 
 
-1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to hdb1-1.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net (unsafe)**. 
+1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to https://hdb1-1.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net (unsafe)**. 
 
 1.  On the **SAP HANA XS Advanced** page, sign in as **XSA_ADMIN** with the password **Manager1**.
 
