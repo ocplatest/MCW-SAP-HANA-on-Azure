@@ -531,7 +531,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
 1.  Remove the following section from the **~/sap-hana/deploy/ansible/roles/sap-media-download/tasks/main.yml** file:
 
-    ```json
+    ```
     # Explicitly install bs4 with python3
     - name: Install beautifulsoup4
       command: |
