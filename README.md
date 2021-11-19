@@ -24,7 +24,9 @@ At the end of this whiteboard design session you will be able to design SAP HANA
 
 ### Hands-on Lab
 
-In this hands-on lab, you will deploy stand-alone and highly-available SAP HANA environments in Azure by using Terraform and Ansible.  Following each deployment, you will review the resulting configuration.  For highly-available deployment, you will test several different failover scenarios in order to validate resiliency of the SAP HANA Pacemaker-based cluster
+In this hands-on lab, you will step through the implementation of a single-node and highly-available SAP HANA deployments on Microsoft Azure virtual machines running SUSE Linux Enterprise Server. 
+
+After its completion, you will be able to perform single-node and highly-available SAP HANA deployments by using Terraform and Ansible, validate both types of deployments, test failover scenarios, and remove the deployed resources.
 
 ## Azure services and related products
 - SAP on Azure
@@ -39,7 +41,7 @@ In this hands-on lab, you will deploy stand-alone and highly-available SAP HANA 
 SAP on Azure
 
 ## Related references
-- [MCW](https://github.com/Microsoft/MCW)
+- [MCW](https://microsoftcloudworkshop.com)
 
 ## Help & Support
 
