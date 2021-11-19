@@ -350,7 +350,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
             "os": {
               "publisher": "MicrosoftWindowsServer",
               "offer": "WindowsServer",
-              "sku": "2021-Datacenter"
+              "sku": "2019-Datacenter"
             },
             "authentication": {
               "type": "password",
