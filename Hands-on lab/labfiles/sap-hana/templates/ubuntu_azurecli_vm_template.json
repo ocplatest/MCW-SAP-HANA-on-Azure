@@ -10,11 +10,12 @@
             }
         },
         "vmName": {
-            "defaultValue": "azcli-vm0",
-            "type": "String"
+            "type": "String",
+            "defaultValue": "azcli-vm0"
         },
         "adminUsername": {
             "type": "string",
+            "defaultValue": "azureadm",
             "metadata": {
                 "description": "Admin username"
             }
@@ -97,7 +98,7 @@
                     "imageReference": {
                         "publisher": "Canonical",
                         "offer": "UbuntuServer",
-                        "sku": "16.04-LTS",
+                        "sku": "18.04-LTS",
                         "version": "latest"
                     },
                     "osDisk": {

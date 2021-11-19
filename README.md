@@ -2,7 +2,7 @@
 
 Contoso, a pharmaceutical company, wants to significantly reduce server and storage hardware in their own datacenters to minimize IT related costs. The leadership asked Contoso IT to look into the possibility of implementing its SAP HANA environment to cloud. Contoso also wants to dramatically simplify the process of provisioning Azure resources, as well as installation and configuration of SAP HANA software components. Contoso IT has been relying on Ansible to manage its on-premises environment and, with the cloud migration plans, it started evaluating the use of Terraform to automate on-premises and cloud-based deployments.
 
-October 2020
+November 2021
 
 ## Target audience
 
@@ -24,7 +24,9 @@ At the end of this whiteboard design session you will be able to design SAP HANA
 
 ### Hands-on Lab
 
-In this hands-on lab, you will deploy stand-alone and highly-available SAP HANA environments in Azure by using Terraform and Ansible.  Following each deployment, you will review the resulting configuration.  For highly-available deployment, you will test several different failover scenarios in order to validate resiliency of the SAP HANA Pacemaker-based cluster
+In this hands-on lab, you will step through the implementation of a single-node and highly-available SAP HANA deployments on Microsoft Azure virtual machines running SUSE Linux Enterprise Server. 
+
+After its completion, you will be able to perform single-node and highly-available SAP HANA deployments by using Terraform and Ansible, validate both types of deployments, test failover scenarios, and remove the deployed resources.
 
 ## Azure services and related products
 - SAP on Azure
@@ -39,7 +41,7 @@ In this hands-on lab, you will deploy stand-alone and highly-available SAP HANA 
 SAP on Azure
 
 ## Related references
-- [MCW](https://github.com/Microsoft/MCW)
+- [MCW](https://microsoftcloudworkshop.com)
 
 ## Help & Support
 
