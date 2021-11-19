@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2020 Microsoft Corporation. All rights reserved.
+Â© 2021 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -63,8 +63,7 @@ After its completion, you will be able to perform single-node and highly-availab
 
 ## Overview
 
-In this hands-on lab, you are working with Contoso to develop a process of implementing an automated deployment of single-node and highly-available SAP HANA instances on Azure virtual machines (VMs). Your tasks will include the preparation for the deployment process, invoking the deployment, validating the outcome of the deployment, and removal all of the deployed resources.
-
+In this hands-on lab, you are working with Contoso to develop a process of implementing an automated deployment of single-node and highly-available SAP HANA instances on Azure virtual machines (VMs). Your tasks will include the preparation for the deployment process, invoking the deployment, validating the outcome of the deployment, and removal of all the deployed resources.
 
 ## Solution architecture
 
@@ -82,7 +81,7 @@ HANA highly-available deployment
 
 -   A work or school account with the Owner role in the Azure subscription and permissions to create service principals in the Azure Active Directory (Azure AD) tenant associated with the Azure subscription
 
--   A SAP-user (S-user) account with access to SAP software downloads
+-   An SAP-user (S-user) account with access to SAP software downloads
 
 -   A lab computer with:
 
@@ -351,7 +350,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
             "os": {
               "publisher": "MicrosoftWindowsServer",
               "offer": "WindowsServer",
-              "sku": "20219-Datacenter"
+              "sku": "2021-Datacenter"
             },
             "authentication": {
               "type": "password",
@@ -761,7 +760,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
     az disk delete --ids $(az disk list --resource-group $RGNAME --query "[].id" -o tsv) --yes --no-wait
     ```
 
-1.  In the SSH session to the Azure VM you used for Terraform deployment, run the following to clean up the working directries and files (confirm when prompted whether to proceed):
+1.  In the SSH session to the Azure VM you used for Terraform deployment, run the following to clean up the working directories and files (confirm when prompted whether to proceed):
 
     ```sh
     terraform_v2.sh clean
@@ -771,7 +770,7 @@ In this exercise, you will implement a single-node deployment of SAP HANA on Azu
 
 Duration: 120 minutes
 
-In this exercise, you will implement a highly-available deployment of SAP HANA on Azure virtual machines (VMs). The deployment will be divided into two fully automated parts. The first one will use Terraform to deploy Azure resources that will host SAP deployment. The second one will use Ansible to deploy and configure all of the SAP components. 
+In this exercise, you will implement a highly-available deployment of SAP HANA on Azure virtual machines (VMs). The deployment will be divided into two fully automated parts. The first one will use Terraform to deploy Azure resources that will host SAP deployment. The second one will use Ansible to deploy and configure all the SAP components. 
 
 You will leverage a number of artifacts that you implemented in the first exercise of this lab, including:
 
@@ -1226,7 +1225,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  On the **nsg-db** blade, select **Inbound security rules** and then select **+ Add**. 
 
-1.  On the **Add inbound security rule** blade, specify the following settings (leave others with their default values) and select **Add**:
+1.  On the **Add inbound security rule** blade, specify the following settings (leave others with their default values), and select **Add**:
 
     | Setting | Value |
     | --- | --- |
@@ -1304,7 +1303,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  Once you signed in, on the **XSA Host: Home - Organizations** page, select **User management**:
 
-    ![The SAP HANA XS Advanced Cockpit displays the XSA Host: Home - Organiations page with the User Management menu option selected.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task3_xsa_home_page.png "XSA Host: Home - Organizations page")
+    ![The SAP HANA XS Advanced Cockpit displays the XSA Host: Home - Organizations page with the User Management menu option selected.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task3_xsa_home_page.png "XSA Host: Home - Organizations page")
 
 1.  On the **XSA Host: Home - User Management** page, select **New User**:
 
@@ -1322,7 +1321,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
     ![The SAP HANA XS Advanced Cockpit displays the New User pane.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task3_xsa_new_user_settings.png "New XSA User pane")
 
-    ![The SAP HANA XS Advanced Cockpit displays the the XSA Host: Home - User Management page with the new user created.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task3_xsa_new_user_created.png "XSA Host: Home - User Management page")
+    ![The SAP HANA XS Advanced Cockpit displays the XSA Host: Home - User Management page with the new user created.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task3_xsa_new_user_created.png "XSA Host: Home - User Management page")
 
 
 ### Task 4: Install SAP HANA Client on the Windows Server jumpbox Azure VM
@@ -1335,7 +1334,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
         ]
     ```
 
-1.  Within the Remote Desktop session to Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start **Microsoft Edge**, and browse to [SAP HANA Client 2.0 download page](https://tools.hana.ondemand.com/#hanatools)
+1.  Within the Remote Desktop session to Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start **Microsoft Edge**, and browse to [SAP HANA Client 2.0 download page](https://tools.hana.ondemand.com/#hanatools).
 
 1.  From the [SAP HANA Client 2.0 download page](https://tools.hana.ondemand.com/#hanatools), download the latest version of the HANA client for Windows x64 to the **Downloads** folder, extract its content, and double-click the **hdbsetup.exe** file to start the installation.
 
@@ -1562,7 +1561,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, switch to the Microsoft Edge window displaying the **SUSE Hawk Status** page at **https://hdb1-0:7630**, wait until the status of the **msl_SAPHana_HN1_HDB01** resource in the Microsoft Edge window displaying connection to **https://hdb1-0:7630** changes from a question mark to a blue dot, and verify that its location changed to **hdb1-0**.
 
-    ![On the Resources tab, the status of the resource has a qustion mark, and its location is hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_stopped_question-mark.png "Resources tab")
+    ![On the Resources tab, the status of the resource has a question mark, and its location is hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_stopped_question-mark.png "Resources tab")
 
     ![On the Resources tab, the status of the resource has a blue dot, and its location is hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_stopped_blue-dot.png "Resources tab")
 
@@ -1727,7 +1726,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     sudo crm resource cleanup msl_SAPHana_HN1_HDB00 hdb1-0
     ```
    
-1.  Switch to the **SUSE Hawk Status** page, and verify that the status indicator of the **SAPHana** clustered resource changed initially to a question mark and then to a blue dot, with hdb1-0 as the master (you might need to wait a few minutes for the interface to refresh).
+1.  Switch to the **SUSE Hawk Status** page and verify that the status indicator of the **SAPHana** clustered resource changed initially to a question mark and then to a blue dot, with hdb1-0 as the master (you might need to wait a few minutes for the interface to refresh).
 
     ![The Resources tab is selected on the Status page.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_post_migration_and_cleanup_question_mark.png "Status page")
 
