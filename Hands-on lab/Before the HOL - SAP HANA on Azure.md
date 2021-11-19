@@ -26,16 +26,16 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [SAP HANA on Azure before the hands-on-lab setup guide](#sap-hana-on-azure-before-the-hands-on-lab-setup-guide)
+- [SAP HANA on Azure before the hands-on lab setup guide](#sap-hana-on-azure-before-the-hands-on-lab-setup-guide)
     - [Requirements](#requirements)
     - [Before the hands-on lab](#before-the-hands-on-lab)
         - [Task 1: Validate the owner role assignment in the Azure subscription](#task-1-Validate-the-owner-role-assignment-in-the-Azure-subscription)
         - [Task 2: Validate the availability of the SUSE Linux Enterprise Server image](#task-2-validate-the-availability-of-the-suse-linux-enterprise-server-image)
-        - [Task 3: Validate sufficient number of vCPU cores](#task-3-validate-sufficient-number-of-vcpu-cores)
+        - [Task 3: Validate a sufficient number of vCPU cores](#task-3-validate-a-sufficient-number-of-vcpu-cores)
 
 <!-- /TOC -->
 
-# SAP HANA on Azure before the hands-on-lab setup guide
+# SAP HANA on Azure before the hands-on lab setup guide
 
 ## Requirements
 
@@ -58,7 +58,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 Duration: 15 minutes
 
-To complete this lab, you must verify that your account has sufficient permissions to the Azure subscription that you intend to use to deploy all required Azure resources. The Azure subscription must have sufficient number of available vCPUs. You also need to identify the availability of the SUSE Linux Enterprise Server image that you will use to deploy Azure VMs.
+To complete this lab, you must verify that your account has sufficient permissions to the Azure subscription that you intend to use to deploy all required Azure resources. The Azure subscription must have a sufficient number of available vCPUs. You also need to identify the availability of the SUSE Linux Enterprise Server image that you will use to deploy Azure VMs.
 
 ### Task 1: Validate the owner role assignment in the Azure subscription
 
@@ -80,7 +80,7 @@ To complete this lab, you must verify that your account has sufficient permissio
 
 1.  If prompted, in the **You have no storage mounted** window, select **Create storage**.
 
-1.  Once the storage account gets provisioned, at the Bash prompt, run the following: where the `[location]` placeholder designates the target Azure region that you intend to use for this lab (e.g. `eastus`), and verify the output includes an existing image:
+1.  Once the storage account gets provisioned, at the Bash prompt, run the following: where the `[location]` placeholder designates the target Azure region that you intend to use for this lab (e.g., `eastus`), and verify the output includes an existing image:
 
     ```sh
     LOCATION='[location]`
@@ -90,9 +90,9 @@ To complete this lab, you must verify that your account has sufficient permissio
 
     > **Note**: To identify the names of Azure regions, in the **Cloud Shell**, at the Bash prompt, run `az account list-locations --query '[].name' --output tsv`
      
-### Task 3: Validate sufficient number of vCPU cores
+### Task 3: Validate a sufficient number of vCPU cores
 
-1.  In the Azure portal, in the **Cloud Shell**, at the Bash prompt, run the following: where the `[LOCATION]` placeholder designates the target Azure region that you intend to use for this lab (e.g. `eastus`):
+1.  In the Azure portal, in the **Cloud Shell**, at the Bash prompt, run the following: where the `[LOCATION]` placeholder designates the target Azure region that you intend to use for this lab (e.g., `eastus`):
 
     ```sh
     LOCATION='[location]`  
