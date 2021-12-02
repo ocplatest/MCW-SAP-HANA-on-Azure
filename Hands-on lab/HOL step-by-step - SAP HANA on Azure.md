@@ -997,17 +997,17 @@ You will leverage a number of artifacts that you implemented in the first exerci
     ![On the Resources tab, the msl_SAPHana_HN1_HDB00 line now displays a blue dot.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_started_blue-dot.png "Resources tab")
 
 
-### Task 7: Test migration of the clustered resources
+### Optional: Task 7: Test migration of the clustered resources
 
-1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, switch to the Microsoft Edge window displaying the **SUSE Hawk Status** page at **https://hdb1-1:7630**.
+1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, switch to the Microsoft Edge window displaying the **SUSE Hawk Status** page at **https://hdb1-0:7630**.
 
     ![On the Resources tab, the SAPHana line now displays a blue dot.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_initial_status.png "Resources tab")
 
-1.  From the **SUSE Hawk Status** page at **https://hdb1-1:7630**, select the **Migrate** option of the **SAPHana** clustered resource.
+1.  From the **SUSE Hawk Status** page at **https://hdb1-0:7630**, select the **Migrate** option of the **SAPHana** clustered resource.
 
     ![On the Resources tab, the SAPHana line now displays a menu containing the Maintenance, Migrate, Cleanup, Recent events, and Edit options.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_migrate_to_hdb1-1_menu.png "Resources tab")
 
-1.  From the **SUSE Hawk Status** page at **https://hdb1-1:7630**, select the **hdb1-1** node as the migration target.
+1.  From the **SUSE Hawk Status** page at **https://hdb1-0:7630**, select the **hdb1-1** node as the migration target.
 
     ![In the Migrate msl_SAPHana_HN1_HDB01 dialog box, the entry hdb1-1 is selected.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_migrate_to_hdb1-1.png "Resources tab")
 
@@ -1103,7 +1103,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     ![The Resources tab is selected on the Status page.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_post_migration_and_cleanup_blue_dot.png "Status page")
 
 
-### Task 8: Test fencing of the clustered resources with the AUTOMATED_REGISTER parameter enabled
+### Optional: Task 8: Test fencing of the clustered resources with the AUTOMATED_REGISTER parameter enabled
 
 > **Note**: The parameter AUTOMATED_REGISTER defines, whether a former primary instance should be registered automatically by the resource agent during cluster/resource start
 
