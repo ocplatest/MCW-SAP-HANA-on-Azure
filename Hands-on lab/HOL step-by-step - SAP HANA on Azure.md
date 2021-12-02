@@ -57,7 +57,7 @@ After its completion, you will be able to perform highly-available SAP HANA depl
 
 ## Overview
 
-In this hands-on lab, you are working with Contoso to develop a process of implementing an automated deployment of single-node and highly-available SAP HANA instances on Azure virtual machines (VMs). Your tasks will include the preparation for the deployment process, invoking the deployment, validating the outcome of the deployment, and removal of all the deployed resources.
+In this hands-on lab, you are working with Contoso to develop a process of implementing an automated deployment of highly-available SAP HANA instances on Azure virtual machines (VMs). Your tasks will include the preparation for the deployment process, invoking the deployment, validating the outcome of the deployment, and removal of all the deployed resources.
 
 ## Solution architecture
 
@@ -220,7 +220,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     source set-sp.sh
     ```
 
-1.  In the SSH session to the Azure VM, run the following to download into the current directory the Azure Resource Manager template and the corresponding parameters file you will use for provisioning of the single-node SAP HANA lab environment:
+1.  In the SSH session to the Azure VM, run the following to download into the current directory the Azure Resource Manager template and the corresponding parameters file you will use for provisioning of the SAP HANA lab environment:
 
     ```sh
     <!-- curl https://github.com/microsoft/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json -->
@@ -478,7 +478,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh.jpg "Resources tab")
 
     ```sh
-    set_sap_download_credentials.sh [SAP_ID] [SAP_ID_password] template-ha1.json
+    set_sap_download_credentials.sh [SAP_ID] [SAP_ID_password] template-ha1
     ```
 
 
