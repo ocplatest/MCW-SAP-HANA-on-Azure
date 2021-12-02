@@ -101,6 +101,8 @@ Duration: 20 minutes
 
 1.  From your computer, start the SSH client and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
+    ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh.jpg "Resources tab")
+
 1.  Within the SSH session to the Azure VM, run the following to update the package manager list of available packages and their versions (confirm when prompted whether to proceed):
 
     ```sh
@@ -472,9 +474,13 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  In the SSH session to the Azure VM, run the following to set the credentials necessary to access SAP downloads site (replace the `[SAP_ID]` placeholder with your SAP ID and the `[SAP_ID_password]` placeholder with the corresponding password available in the lab environment details page):
 
+
+    ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh.jpg "Resources tab")
+
     ```sh
     set_sap_download_credentials.sh [SAP_ID] [SAP_ID_password] template-ha1.json
     ```
+
 
 1.  In the SSH session to the Azure VM, run the following to set the resource id of the existing storage account that hosts the SAP media files and add it to the Azure Resource Manager template you are using in this deployment:
 
