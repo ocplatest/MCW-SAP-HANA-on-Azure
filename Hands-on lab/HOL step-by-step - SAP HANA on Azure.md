@@ -97,22 +97,7 @@ HANA highly-available deployment
 
 Duration: 20 minutes
 
-1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with credentials you will be using in this lab.
-
-1.  In the Azure portal at <http://portal.azure.com>, start a Bash session in **Cloud Shell**.
-
-1.  If prompted, in the **Welcome to Azure Cloud Shell** window, select **Bash (Linux)**.
-
-1.  If prompted, in the **You have no storage mounted** window, select **Create storage**.
-
-1.  In the **Bash** session in the **Cloud Shell** pane, run the following to select the Azure subscription in which you will provision the Azure resources in this lab (replace the `[subscription_ID]` placeholder with the value of the subscriptionID parameter of the Azure subscription you intend to use in this lab):
-
-    ```sh
-    az account set --subscription '[subscription_ID]'
-    ```
-
-1.  In the **Bash** session in the **Cloud Shell** pane, run the following to create an Azure resource group that will contain the Azure VM hosting the lab deployment tools (replace the `[Azure_region]` placeholder with the name of the Azure region you intend to use for all Azure resources you will deploy in this lab):
-
+1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with credentials you will be using in this lab to see the Azure resources.
 
 1.  From your computer, start the SSH client and connect via SSH to the newly provisioned Azure VM via the public IP address you identified in the previous step. When prompted to sign in, authenticate by using the **azureadm** user account and the password you provided during provisioning.
 
