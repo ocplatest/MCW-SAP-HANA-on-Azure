@@ -33,7 +33,8 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
     - [Help references](#help-references)
-    - [Exercise 1: Implement highly-available HANA instances by using Terraform and Ansible](#exercise-2-Implement-highly-available-HANA-instances-by-using-Terraform-and-Ansible)
+    - Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
+    - [Exercise 2: Implement highly-available HANA instances by using Terraform and Ansible](#exercise-2-Implement-highly-available-HANA-instances-by-using-Terraform-and-Ansible)
         - [Task 1: Deploy highly-available Azure infrastructure by using Terraform](#task-1-Deploy-highly-available-Azure-infrastructure-by-using-Terraform)
         - [Task 2: Deploy highly-available Azure HANA instances by using Ansible](#task-2-Deploy-highly-available-Azure-HANA-instances-by-using-Ansible)
         - [Task 3: Review the deployment of highly-available HANA instances](#task-3-Review-the-deployment-of-highly-available-HANA-instances)
@@ -93,61 +94,13 @@ HANA highly-available deployment
 | Automated SAP Deployments in Azure Cloud | <https://github.com/Azure/sap-hana/> |
 
 
-## Exercise 1: Prepare the Linux virtual machine hosting lab deployment tools
-
-Duration: 20 minutes
+## Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
 
 1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with credentials you will be using in this lab to see the Azure resources.
 
 1.  From your computer, start the SSH client and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
     ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh.jpg "Resources tab")
-
-1.  Within the SSH session to the Azure VM, run the following to update the package manager list of available packages and their versions (confirm when prompted whether to proceed):
-
-    ```sh
-    sudo apt-get update
-    ```
-
-1.  Within the SSH session to the Azure VM, run the following to upgrade the versions of the local packages (confirm when prompted whether to proceed):
-
-    ```sh
-    sudo apt-get upgrade
-    ```
-
-1.  Within the SSH session to the Azure VM, run the following to install Azure CLI:
-
-    ```sh
-    curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-    ```
-
-1.  Within the SSH session to the Azure VM, run the following to install the latest version of Terraform:
-
-    ```sh
-    TER_VER='0.14.0'
-    wget https://releases.hashicorp.com/terraform/${TER_VER}/terraform_${TER_VER}_linux_amd64.zip
-    sudo apt install unzip
-    unzip terraform_${TER_VER}_linux_amd64.zip
-    sudo mv terraform /usr/local/bin/
-    ```
-
-1.  Within the SSH session to the Azure VM, run the following to install jq (confirm when prompted whether to proceed):
-
-    ```sh
-    sudo apt-get install jq
-    ```
-
-1.  Within the SSH session to the Azure VM, run the following to install Ansible (confirm when prompted whether to proceed):
-
-    ```sh
-    sudo apt install ansible
-    ```
-
-1.  Within the SSH session to the Azure VM, run the following to install Git:
-
-    ```sh
-    sudo apt-get install git
-    ```
 
 ## Exercise 2: Implement highly-available HANA instances by using Terraform and Ansible
 
