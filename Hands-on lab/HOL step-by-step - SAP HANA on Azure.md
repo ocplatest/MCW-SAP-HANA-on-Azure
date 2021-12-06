@@ -498,12 +498,12 @@ You will leverage the below artifact to complete this lab:
     ```
 
 1.  Within the SSH session to the Linux jumpbox VM, run the following to initiate the Ansible-based provisioning of the lab environment: 
+    
+    > **Note**: This deployment should take about 60 minutes. You need to wait for the deployment to complete. Please make sure you don't press any key or abort the deployment.  
 
     ```sh
     ansible-playbook -i hosts ~/sap-hana/deploy/ansible/sap_playbook.yml
     ```
-
-    > **Note**: This deployment should take about 60 minutes. You need to wait for the deployment to complete. Please make sure you don't press any key or abort the deployment.  
 
     > **Note**: Once the deployment completes, the output will include the public IP address of the Windows jumpbox VM included in the Terraform deployment, its local user name with the Administrator privileges, and its password, which you will use in the next task. 
 
@@ -827,8 +827,8 @@ You will leverage the below artifact to complete this lab:
     > **Note**: The entries you edit should resemble the following (the domain name will be different):
 
     ```sh
-    default_domain = hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net
-    api_url = https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net:30030
+    default_domain = hdb1-1.<UPDATE_DOMAIN_NAME>.bx.internal.cloudapp.net
+    api_url = https://hdb1-1.<UPDATE_DOMAIN_NAME>.bx.internal.cloudapp.net:30030
     ```
 1.  Once you have updated the entries in the file, click on **ctrl+[**, then type "**:wq**" to save the updates in the file.
 
