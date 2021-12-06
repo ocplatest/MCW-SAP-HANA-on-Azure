@@ -84,7 +84,7 @@ HANA highly-available deployment
 
     -   A modern web browser (Microsoft Edge, Google Chrome, or Mozilla Firefox)
 
-   > **Note**: Besides an SSH client and a web browser, the lab computer does not require locally installed software.
+   > **Note**: You can use the Virtual Machine provided in the lab environment which has all the pre-requisites applications installed.
 
 ## Help references
 
@@ -96,11 +96,11 @@ HANA highly-available deployment
 
 ## Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
 
-1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with credentials you will be using in this lab to see the Azure resources.
+1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with credentials you will be using in this lab to see the Azure resources. 
 
  ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")
 
-1.  From your computer, start the SSH client and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
+1.  From your computer, start the SSH client(Putty) and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
     ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh1.jpg "Resources tab")
 
