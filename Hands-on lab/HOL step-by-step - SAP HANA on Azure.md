@@ -819,7 +819,8 @@ You will leverage the below artifact to complete this lab:
     vi /hana/shared/HN1/global/hdb/custom/config/xscontroller.ini
     ```
 
-    > **Note**: You can use any Linux editor based on your preferences.
+    > **Note**: You can use any Linux editor based on your preferences. 
+   
 
 1.  Within the editor interface, update the value of the **default_domain** and **api_url** parameters to reference the **hdb1-1** cluster node and close the file, saving your changes. 
 
@@ -829,6 +830,8 @@ You will leverage the below artifact to complete this lab:
     default_domain = hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net
     api_url = https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net:30030
     ```
+1.  Once you have updated the entries in the file, click on **ctrl+[**, then type "**:wq**" to save the updates in the file.
+
 
 1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to reset the certificate for the controller API. 
 
