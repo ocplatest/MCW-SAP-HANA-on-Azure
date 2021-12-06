@@ -427,7 +427,6 @@ You will leverage a number of artifacts that you implemented in the first exerci
     set_sap_download_credentials.sh [SAP_ID] [SAP_ID_password] template-ha1
     ```
 
-
 1.  In the SSH session to the Azure VM, run the following to set the resource id of the existing storage account that hosts the SAP media files and add it to the Azure Resource Manager template you are using in this deployment:
 
     ```sh
