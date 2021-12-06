@@ -100,7 +100,7 @@ HANA highly-available deployment
 
 1.  From your computer, start the SSH client and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
-    ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh.jpg "Resources tab")
+    ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh1.jpg "Resources tab")
 
 ## Exercise 2: Implement highly-available HANA instances by using Terraform and Ansible
 
@@ -133,18 +133,6 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  Note the code displayed as the output of the previous command, switch to your lab computer, open another tab in the browser window displaying the Azure portal, navigate to [the Microsoft Device Login page](https://microsoft.com/devicelogin) and, when prompted, enter the code and select **Next**.
 
 1.  When prompted, sign in with credentials you are using in this lab and close the browser tab.
-
-1.  Switch back to the SSH session to the Azure VM you provisioned in the previous task and run the following to identify the current Azure subscription:
-
-    ```sh
-    check_subscription.sh
-    ```
-
-1.  If needed, in the SSH session to the Azure VM, run the following to select the Azure subscription in which you will provision the Azure resources in this lab (replace the `[subscription_ID]` placeholder with the value of the subscriptionID parameter of the Azure subscription you are using in this lab):
-
-    ```sh
-    az account set --subscription '[subscription_ID]':
-    ```
 
 1.  In the SSH session to the Azure VM you used for Terraform deployment, run the following to clone the code you will use to perform the deployment, switch to the directory containing the deployment files, and grant execute permissions on all directories and files:
 
@@ -427,8 +415,8 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 1.  In the SSH session to the Azure VM, run the following to set the credentials necessary to access SAP downloads site (replace the `[SAP_ID]` placeholder with your SAP ID and the `[SAP_ID_password]` placeholder with the corresponding password available in the lab environment details page):
 
-
-    ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh.jpg "Resources tab")
+    ![sap details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/sap1.jpg "Resources tab")
+    
 
     ```sh
     set_sap_download_credentials.sh [SAP_ID] [SAP_ID_password] template-ha1
