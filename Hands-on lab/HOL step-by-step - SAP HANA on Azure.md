@@ -96,10 +96,20 @@ HANA highly-available deployment
 
 ## Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
 
-1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with credentials you will be using in this lab to see the Azure resources. 
+1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with the Azure credentials. Please find the Azure credentials for the lab below. You can also find all the credentials for the lab in the **Environment details** page : 
 
- ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")
+* Email/Username: <inject key="AzureAdUserEmail"></inject> 
 
+* Password: <inject key="AzureAdUserPassword"></inject> 
+
+
+ ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")0
+1.  Once you have successfully login to Azure, you can see 2 resource groups named **hanav2-sn-RG** and **mcw-hana-on-azure-cli-RG**.
+    In **hanav2-sn-RG**, you can find the Jump VM and a storage account named **sapbitsXXXX**, where HANA software media download files are present.
+    In the **mcw-hana-on-azure-cli-RG** you can see the pre-deployed Linux virtual machine that you will be using in the upcoming steps.
+    
+     ![az resource.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azres.jpg "Resources tab")
+     
 1.  From your computer, start the SSH client(Putty) and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
     ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh1.jpg "Resources tab")
