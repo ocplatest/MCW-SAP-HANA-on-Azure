@@ -110,13 +110,10 @@ Duration: 120 minutes
 
 In this exercise, you will implement a highly-available deployment of SAP HANA on Azure virtual machines (VMs). The deployment will be divided into two fully automated parts. The first one will use Terraform to deploy Azure resources that will host SAP deployment. The second one will use Ansible to deploy and configure all the SAP components. 
 
-You will leverage a number of artifacts that you implemented in the first exercise of this lab, including:
+You will leverage the below artifact to complete this lab:
 
--   HANA software that you uploaded to an Azure Storage account
-
--   SSH key pair
-
--   The service principal created to facilitate authentication and authorization required by Terraform to provision Azure resources.
+-   HANA software that you uploaded to an Azure Storage account.
+     This storage account is pre-created and can be found in the resource group named **hanav2-sn-RG** 
 
 ### Task 1: Deploy highly-available Azure infrastructure by using Terraform
 
@@ -169,7 +166,6 @@ You will leverage a number of artifacts that you implemented in the first exerci
 1.  In the SSH session to the Azure VM, run the following to download into the current directory the Azure Resource Manager template and the corresponding parameters file you will use for provisioning of the SAP HANA lab environment:
 
     ```sh
-    <!-- curl https://github.com/microsoft/MCW-SAP-HANA-on-Azure/tree/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json -->
     curl https://raw.githubusercontent.com/polichtm/MCW-SAP-HANA-on-Azure/master/Hands-on%20lab/labfiles/sap-hana/templates/template-ha1.json  --output ./deploy/template_samples/template-ha1.json
     ```
 
