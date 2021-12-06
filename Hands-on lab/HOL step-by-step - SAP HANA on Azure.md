@@ -120,9 +120,11 @@ You will leverage a number of artifacts that you implemented in the first exerci
 
 ### Task 1: Deploy highly-available Azure infrastructure by using Terraform
 
-1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to generate the SSH key pair that will be used to secure access to Linux Azure VMs deployed in this lab (when prompted to specify the location of the file in which to save the key and to specify the passphrase protecting the content of the file, press the **Enter** key three times): 
+1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to generate the SSH key pair that will be used to secure access to Linux Azure VMs deployed in this lab (when prompted to specify the location of the file in which to save the key and to specify the passphrase protecting the content of the file, press the **Enter** key three times):
 
-     ```sh
+     Note : You can use the copy button to copy the text from the text box provided below:
+
+     ```
      ssh-keygen -t rsa -b 2048
      ``` 
 
