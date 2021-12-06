@@ -460,7 +460,7 @@ You will leverage the below artifact to complete this lab:
     terraform_v2.sh apply template-ha1
     ```
 
-    > **Note**: Wait for the deployment to complete. This should take about 10 minutes.
+    > **Note**: Wait for the deployment to complete. This should take about 25 minutes.
 
     > **Note**: Once the deployment completes, the output will include the public IP address of the Linux jumpbox Azure VM included in the Terraform deployment and its administrator's account name, which you will use in the next task. 
 
