@@ -98,6 +98,8 @@ HANA highly-available deployment
 
 1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with credentials you will be using in this lab to see the Azure resources.
 
+ ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")
+
 1.  From your computer, start the SSH client and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
     ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh1.jpg "Resources tab")
