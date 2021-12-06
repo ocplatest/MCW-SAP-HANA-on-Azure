@@ -133,8 +133,9 @@ You will leverage a number of artifacts that you implemented in the first exerci
     ```sh
     az login
     ```
-
-1.  Note the code displayed as the output of the previous command, switch to your lab computer, open another tab in the browser window displaying the Azure portal, navigate to [the Microsoft Device Login page](https://microsoft.com/devicelogin) and, when prompted, enter the code and select **Next**.
+    Note the code displayed as the output of the above command. You will use it in the next step.
+    
+1. Switch to your lab computer, open another tab in the browser window displaying the Azure portal, navigate to [the Microsoft Device Login page](https://microsoft.com/devicelogin) and, when prompted, enter the code and select **Next**.
 
 1.  When prompted, sign in with credentials you are using in this lab and close the browser tab.
 
@@ -497,7 +498,7 @@ You will leverage a number of artifacts that you implemented in the first exerci
     ansible-playbook -i hosts ~/sap-hana/deploy/ansible/sap_playbook.yml
     ```
 
-    > **Note**: Wait for the deployment to complete. This should take about 60 minutes.
+    > **Note**: This deployment should take about 60 minutes. You need to wait for the deployment to complete. Please make sure you don't press any key or abort the deployment.  
 
     > **Note**: Once the deployment completes, the output will include the public IP address of the Windows jumpbox VM included in the Terraform deployment, its local user name with the Administrator privileges, and its password, which you will use in the next task. 
 
