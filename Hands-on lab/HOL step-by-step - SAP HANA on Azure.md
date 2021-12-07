@@ -467,7 +467,34 @@ You will leverage the below artifact to complete this lab:
 
 ### Task 2: Deploy highly-available Azure HANA instances by using Ansible
 
-1.  Within the SSH session to the Azure VM you used for Terraform deployment, run the following to connect via SSH to the Linux jumpbox VM, which public IP address you identified in the previous task (replace the `[IP_address]` placeholder with the value of the public IP address and confirm when prompted whether to proceed):
+1.  From your computer, start the SSH client(Putty) and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
+
+    ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh1.jpg "Resources tab")
+    
+1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to generate the SSH key pair that will be used to secure access to Linux Azure VMs deployed in this lab (when prompted to specify the location of the file in which to save the key and to specify the passphrase protecting the content of the file, press the **Enter** key three times):
+
+     Note : You can use the copy button to copy the text from the text box provided below:
+
+     ```
+     ssh-keygen -t rsa -b 2048
+     ``` 
+
+1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to authenticate to the Azure AD tenant associated with your Azure subscription:
+
+    ```sh
+    az login
+    ```
+    Note the code displayed as the output of the above command. You will use it in the next step.
+    
+1. Switch to your lab computer, open another tab in the browser window displaying the Azure portal, navigate to [the Microsoft Device Login page](https://microsoft.com/devicelogin) and, when prompted, enter the code and select **Next**.
+
+1.  When prompted, sign in with credentials you are using in this lab and close the browser tab.
+
+1.  Go back to Azure portal, open the resource group named "**hanav2-ha-RG**" and then open "**rti**" virtual machine. This is your Linux Jumpbox VM. Copy the IP Address of the rti vm from the VM Page.
+
+![linvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rti.jpg "Resources tab")
+
+1.  Within the SSH session to the Azure VM you used for Terraform deployment, run the following to connect via SSH to the Linux jumpbox VM. Use the IP Address of the RTI Vm that you just copied in the previous step.
 
     ```sh
     ssh azureadm@[IP_address]
