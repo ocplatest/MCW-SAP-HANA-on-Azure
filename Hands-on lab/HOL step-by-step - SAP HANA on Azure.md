@@ -103,9 +103,10 @@ HANA highly-available deployment
 
 
  ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")0
-1.  Once you have successfully login to Azure, you can see 2 resource groups named **hanav2-sn-RG** and **mcw-hana-on-azure-cli-RG**.
+1.  Once you have successfully login to Azure, you can see 3 resource groups named **hanav2-sn-RG**, **mcw-hana-on-azure-cli-RG** and **hanav2-ha-RG**.
     In **hanav2-sn-RG**, you can find the Jump VM and a storage account named **sapbitsXXXX**, where HANA software media download files are present.
     In the **mcw-hana-on-azure-cli-RG** you can see the pre-deployed Linux virtual machine that you will be using in the upcoming steps.
+    In **hanav2-ha-RG**, you can find the highly-available Azure infrastructure for HANA.
     
      ![az resource.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azres.jpg "Resources tab")
      
@@ -123,7 +124,7 @@ You will leverage the below artifact to complete this lab:
 
 -   HANA software that you uploaded to an Azure Storage account.
      This storage account is pre-created and can be found in the resource group named **hanav2-sn-RG** 
-- The HANA Infrastructure deployed in the RG named **hanav2-ha-RG** 
+- The Highly-available Azure Infrastructure for HANA instance deployed in the RG named **hanav2-ha-RG** 
 
 ### Task 1: Deploy highly-available Azure HANA instances by using Ansible
 
@@ -154,7 +155,7 @@ You will leverage the below artifact to complete this lab:
 
 ![linvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rti.jpg "Resources tab")
 
-1.  Within the SSH session to the Azure VM you used for Terraform deployment, run the following to connect via SSH to the Linux jumpbox VM. Use the IP Address of the RTI Vm that you just copied in the previous step.
+1.  Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. Use the IP Address of the RTI Vm that you just copied in the previous step.
 
     ```sh
     ssh azureadm@[IP_address]
