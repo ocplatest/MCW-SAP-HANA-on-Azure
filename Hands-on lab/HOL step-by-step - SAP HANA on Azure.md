@@ -255,13 +255,13 @@ You will leverage the below artifact to complete this lab:
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, open the **hosts** file located in **C:\\Windows\\System32\\drivers\\etc** in Notepad.
 
-1.  Add the following entries to the host file (replace the `cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net` with the domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
+1.  Add the following entries to the host file (replace the `ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net` with the domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
 
     ```
     10.101.2.10	hdb1-0
-    10.101.2.10	hdb1-0.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net
+    10.101.2.10	hdb1-0.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net>
     10.101.2.11	hdb1-1
-    10.101.2.11	hdb1-1.cfrxsszyu1sutpvevprr2hn0rc.bx.internal.cloudapp.net
+    10.101.2.11	hdb1-1.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net>
     10.101.2.4	hdbha
     ```
 
