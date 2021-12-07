@@ -34,7 +34,7 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Requirements](#requirements)
     - [Help references](#help-references)
     - Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
-    - [Exercise 2: Implement highly-available HANA instances by using Terraform and Ansible](#exercise-2-Implement-highly-available-HANA-instances-by-using-Terraform-and-Ansible)
+    - [Exercise 2: Implement highly-available HANA instances by using Ansible](#exercise-2-Implement-highly-available-HANA-instances-by-using-Ansible)
         - [Task 1: Deploy highly-available Azure HANA instances by using Ansible](#task-2-Deploy-highly-available-Azure-HANA-instances-by-using-Ansible)
         - [Task 2: Review the deployment of highly-available HANA instances](#task-3-Review-the-deployment-of-highly-available-HANA-instances)
         - [Task 3: Install SAP HANA Client on the Windows Server jumpbox Azure VM](#task-4-Install-SAP-HANA-Client-on-the-Windows-Server-jumpbox-Azure-VM)
@@ -114,7 +114,7 @@ HANA highly-available deployment
 
     ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh1.jpg "Resources tab")
 
-## Exercise 2: Implement highly-available HANA instances by using Terraform and Ansible
+## Exercise 2: Implement highly-available HANA instances by using Ansible
 
 Duration: 120 minutes
 
