@@ -118,7 +118,7 @@ HANA highly-available deployment
 
 Duration: 120 minutes
 
-In this exercise, you will implement a highly-available deployment of SAP HANA on Azure virtual machines (VMs). The deployment will be divided into two fully automated parts. The first one will use Terraform to deploy Azure resources that will host SAP deployment. The second one will use Ansible to deploy and configure all the SAP components. 
+In this exercise, you will implement a highly-available deployment of SAP HANA on Azure virtual machines (VMs). In this lab, you will be having access to **hanav2-ha-RG** where you can find the pre-deployed highly-available Azure infrastructure . You will use Ansible to deploy and configure all the SAP components. 
 
 You will leverage the below artifact to complete this lab:
 
