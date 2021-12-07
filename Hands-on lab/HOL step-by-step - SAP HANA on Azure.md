@@ -124,7 +124,7 @@ You will leverage the below artifact to complete this lab:
 
 -   HANA software that you uploaded to an Azure Storage account.
      This storage account is pre-created and can be found in the resource group named **hanav2-sn-RG** 
-- The Highly-available Azure Infrastructure for HANA instance deployed in the RG named **hanav2-ha-RG** 
+-   The Highly-available Azure Infrastructure for HANA instance deployed in the RG named **hanav2-ha-RG** 
 
 ### Task 1: Deploy highly-available Azure HANA instances by using Ansible
 
@@ -145,7 +145,7 @@ You will leverage the below artifact to complete this lab:
 
 1.  Go back to Azure portal, open the resource group named "**hanav2-ha-RG**" and then open "**rti**" virtual machine. This is your Linux Jumpbox VM. Copy the IP Address of the rti vm from the virtual machine Page.
 
-![linvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rti.jpg "Resources tab")
+    ![linvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rti.jpg "Resources tab")
 
 1.  Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. While running the cammand replace [IP_address] with the IP Address of the RTI vm that you just copied in the previous step.
 
