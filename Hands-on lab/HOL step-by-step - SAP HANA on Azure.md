@@ -104,9 +104,9 @@ HANA highly-available deployment
 
  ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")0
 1.  Once you have successfully login to Azure, you can see 3 resource groups named **hanav2-sn-RG**, **mcw-hana-on-azure-cli-RG** and **hanav2-ha-RG**.
-    In **hanav2-sn-RG**, you can find the Jump VM and a storage account named **sapbitsXXXX**, where HANA software media download files are present.
-    In the **mcw-hana-on-azure-cli-RG** you can see the pre-deployed Linux virtual machine that you will be using in the upcoming steps.
-    In **hanav2-ha-RG**, you can find the highly-available Azure infrastructure for HANA.
+    * In **hanav2-sn-RG**, you can find the Jump VM and a storage account named **sapbitsXXXX**, where HANA software media download files are present.
+    * In the **mcw-hana-on-azure-cli-RG**, you will be able see the pre-deployed Linux virtual machine that you will be using in the upcoming steps.
+    * In **hanav2-ha-RG**, you can find the highly-available Azure infrastructure for HANA instance.
     
      ![az resource.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azres.jpg "Resources tab")
      
@@ -131,14 +131,6 @@ You will leverage the below artifact to complete this lab:
 1.  From your computer, start the SSH client(Putty) and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
     ![sshvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ssh1.jpg "Resources tab")
-    
-1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to generate the SSH key pair that will be used to secure access to Linux Azure VMs deployed in this lab (when prompted to specify the location of the file in which to save the key and to specify the passphrase protecting the content of the file, press the **Enter** key three times):
-
-     Note : You can use the copy button to copy the text from the text box provided below:
-
-     ```
-     ssh-keygen -t rsa -b 2048
-     ``` 
 
 1.  In the SSH session to the Azure VM you provisioned in the previous task, run the following to authenticate to the Azure AD tenant associated with your Azure subscription:
 
@@ -151,11 +143,11 @@ You will leverage the below artifact to complete this lab:
 
 1.  When prompted, sign in with credentials you are using in this lab and close the browser tab.
 
-1.  Go back to Azure portal, open the resource group named "**hanav2-ha-RG**" and then open "**rti**" virtual machine. This is your Linux Jumpbox VM. Copy the IP Address of the rti vm from the VM Page.
+1.  Go back to Azure portal, open the resource group named "**hanav2-ha-RG**" and then open "**rti**" virtual machine. This is your Linux Jumpbox VM. Copy the IP Address of the rti vm from the virtual machine Page.
 
 ![linvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rti.jpg "Resources tab")
 
-1.  Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. Use the IP Address of the RTI Vm that you just copied in the previous step.
+1.  Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. While running the cammand replace [IP_address] with the IP Address of the RTI vm that you just copied in the previous step.
 
     ```sh
     ssh azureadm@[IP_address]
