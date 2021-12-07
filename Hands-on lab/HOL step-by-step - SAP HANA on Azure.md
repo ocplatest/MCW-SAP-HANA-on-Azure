@@ -35,14 +35,13 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Help references](#help-references)
     - Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
     - [Exercise 2: Implement highly-available HANA instances by using Terraform and Ansible](#exercise-2-Implement-highly-available-HANA-instances-by-using-Terraform-and-Ansible)
-        - [Task 1: Deploy highly-available Azure infrastructure by using Terraform](#task-1-Deploy-highly-available-Azure-infrastructure-by-using-Terraform)
-        - [Task 2: Deploy highly-available Azure HANA instances by using Ansible](#task-2-Deploy-highly-available-Azure-HANA-instances-by-using-Ansible)
-        - [Task 3: Review the deployment of highly-available HANA instances](#task-3-Review-the-deployment-of-highly-available-HANA-instances)
-        - [Task 4: Install SAP HANA Client on the Windows Server jumpbox Azure VM](#task-4-Install-SAP-HANA-Client-on-the-Windows-Server-jumpbox-Azure-VM)
-        - [Task 5: Test failover of the clustered resources](#task-5-Test-failover-of-the-clustered-resources)
-        - [Task 6: Test fencing of the clustered resources](#task-6-Test-fencing-of-the-clustered-resources)
-        - [Task 7: Test migration of the clustered resources](#task-7-Test-migration-of-the-clustered-resources)
-        - [Task 8: Test fencing of the clustered resources with the AUTOMATED_REGISTER parameter enabled](#task-8-Test-fencing-of-the-clustered-resources-with-the-AUTOMATED_REGISTER-parameter-enabled)
+        - [Task 1: Deploy highly-available Azure HANA instances by using Ansible](#task-2-Deploy-highly-available-Azure-HANA-instances-by-using-Ansible)
+        - [Task 2: Review the deployment of highly-available HANA instances](#task-3-Review-the-deployment-of-highly-available-HANA-instances)
+        - [Task 3: Install SAP HANA Client on the Windows Server jumpbox Azure VM](#task-4-Install-SAP-HANA-Client-on-the-Windows-Server-jumpbox-Azure-VM)
+        - [Task 4: Test failover of the clustered resources](#task-5-Test-failover-of-the-clustered-resources)
+        - [Task 5: Test fencing of the clustered resources](#task-6-Test-fencing-of-the-clustered-resources)
+        - [Task 6: Test migration of the clustered resources](#task-7-Test-migration-of-the-clustered-resources)
+        - [Task 7: Test fencing of the clustered resources with the AUTOMATED_REGISTER parameter enabled](#task-8-Test-fencing-of-the-clustered-resources-with-the-AUTOMATED_REGISTER-parameter-enabled)
     - [After the Hands-on lab](#after-the-hands-on-lab)
 
 
@@ -126,7 +125,7 @@ You will leverage the below artifact to complete this lab:
      This storage account is pre-created and can be found in the resource group named **hanav2-sn-RG** 
 - The HANA Infrastructure deployed in the RG named **hanav2-ha-RG** 
 
-### Task 2: Deploy highly-available Azure HANA instances by using Ansible
+### Task 1: Deploy highly-available Azure HANA instances by using Ansible
 
 1.  From your computer, start the SSH client(Putty) and connect via SSH to the pre-provisioned Azure VM via the `SSH VM DNS NAME` you identified in the lab environment details page. When prompted to sign in, authenticate by using the **SSH VM Username** and the "**SSH VM Password**" provided in the lab environment details page.
 
@@ -196,7 +195,7 @@ You will leverage the below artifact to complete this lab:
     > **Note**: Once the deployment completes, the output will include the public IP address of the Windows jumpbox VM included in the Terraform deployment, its local user name with the Administrator privileges, and its password, which you will use in the next task. 
 
 
-### Task 3: Review the deployment of highly-available HANA instances
+### Task 2: Review the deployment of highly-available HANA instances
 
 > **Note**: In this deployment, the **hdb1-0** Azure VM also has two private IP addresses **10.101.1.10** and **10.101.2.10**. The first one is meant to be used for management. You will use this IP address in this exercise. 
 
@@ -378,7 +377,7 @@ You will leverage the below artifact to complete this lab:
     ![The SAP HANA XS Advanced Cockpit displays the XSA Host: Home - User Management page with the new user created.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task3_xsa_new_user_created.png "XSA Host: Home - User Management page")
 
 
-### Task 4: Install SAP HANA Client on the Windows Server jumpbox Azure VM
+### Task 3: Install SAP HANA Client on the Windows Server jumpbox Azure VM
 
 > **Note**: It is possible to automate the client installation by adding the following section to the windows jumpbox section of the deployment template:
 
@@ -445,7 +444,7 @@ You will leverage the below artifact to complete this lab:
     > **Note**: Review the output, including the **sql port** entry, which allows you to identify the target HANA instance. You will use this method to verify connectivity to HANA in the subsequent tasks of this exercise.
 
 
-### Task 5: Test failover of the clustered resources
+### Task 4: Test failover of the clustered resources
 
 > **Note**: The remaining tasks within this exercise rely on **SUSE Hawk** to manipulate properties of HANA clustered resources. You can also use for this purpose cluster resource manager (CRM) shell interface.
 
@@ -612,7 +611,7 @@ You will leverage the below artifact to complete this lab:
     ![On the Resources tab, the SAPHana line now displays a blue dot.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task5_hawk_post_failover_and_pacemaker_restart.png "Resources tab")
 
 
-### Task 6: Test fencing of the clustered resources
+### Task 5: Test fencing of the clustered resources
 
 1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, in the Microsoft Edge window displaying the Azure portal, search for and select the **Virtual machines** entry, on the **Virtual machines** blade, select the entry representing the **hdb1-1** Azure VM hosting the currently active HANA instance, in the toolbar, select **Stop** and, when prompted for confirmation, select **Yes**. 
 
@@ -686,7 +685,7 @@ You will leverage the below artifact to complete this lab:
     ![On the Resources tab, the msl_SAPHana_HN1_HDB00 line now displays a blue dot.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task6_hawk_post_primary_node_started_blue-dot.png "Resources tab")
 
 
-### Optional: Task 7: Test migration of the clustered resources
+### Optional: Task 6: Test migration of the clustered resources
 
 1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, switch to the Microsoft Edge window displaying the **SUSE Hawk Status** page at **https://hdb1-0:7630**.
 
@@ -792,7 +791,7 @@ You will leverage the below artifact to complete this lab:
     ![The Resources tab is selected on the Status page.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_post_migration_and_cleanup_blue_dot.png "Status page")
 
 
-### Optional: Task 8: Test fencing of the clustered resources with the AUTOMATED_REGISTER parameter enabled
+### Optional: Task 7: Test fencing of the clustered resources with the AUTOMATED_REGISTER parameter enabled
 
 > **Note**: The parameter AUTOMATED_REGISTER defines, whether a former primary instance should be registered automatically by the resource agent during cluster/resource start
 
