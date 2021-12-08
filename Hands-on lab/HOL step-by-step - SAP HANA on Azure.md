@@ -104,7 +104,7 @@ HANA highly-available deployment
 * Password: <inject key="AzureAdUserPassword"></inject> 
 
 
- ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")0
+    ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")0
 1.  Once you have successfully login to Azure, you can see 3 resource groups named **hanav2-sn-RG**, **mcw-hana-on-azure-cli-RG** and **hanav2-ha-RG**.
     * In **hanav2-sn-RG**, you can find the Jump VM and a storage account named **sapbitsXXXX**, where HANA software media download files are present.
     * In the **mcw-hana-on-azure-cli-RG**, you will be able see the pre-deployed Linux virtual machine that you will be using in the upcoming steps.
@@ -173,9 +173,13 @@ You will leverage the below artifact to complete this lab:
 
     ```sh
     curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/hdb_sizes.json --output ~/sap-hana/deploy/hdb_sizes.json  
+    
     curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/components.json --output ~/sap-hana/deploy/components.json
+    
     curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/app_sizes.json --output ~/sap-hana/deploy/app_sizes.json
+    
     curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/anydb_sizes.json --output ~/sap-hana/deploy/anydb_sizes.json
+    
     curl https://raw.githubusercontent.com/polichtm/sap-hana-mcw/main/deploy/input.json --output ~/sap-hana/deploy/input.json
     ```
 
@@ -187,8 +191,9 @@ You will leverage the below artifact to complete this lab:
     ansible-playbook -i hosts ~/sap-hana/deploy/ansible/sap_playbook.yml
     ```
 
-    > **Note**: Once the deployment completes, the output will include the public IP address of the Windows jumpbox VM included in the Terraform deployment, its local user name with the Administrator privileges, and its password, which you will use in the next task. 
+    > **Note**: Once the deployment completes, the output will include the public IP address of the Windows jumpbox VM (**hanav2jmp-vm0**) included in the Terraform deployment, its local user name with the Administrator privileges, and its password, which you will use in the next task. 
 
+    ![out details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/out.jpg "Resources tab")
 
 ### Task 2: Review the deployment of highly-available HANA instances
 
@@ -243,7 +248,8 @@ You will leverage the below artifact to complete this lab:
 
 1.  Within the SSH session to the **hdb1-0** Azure VM, type `exit` to return to the `azureadm@hdb1-0:~>` prompt.
 
-1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0** which public IP address you identified in the previous task. When prompted, sign in by using the **azureadm** username and the **Sap@hana2019!** password.
+1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0** which public IP address you identified in the previous task. You can also find the IP Address from Azure portal. Go to Axure portal, open the resource group named  **hanav2-sn-RG** and open the **hanav2jmp-vm0** page to get the IP Address. 
+    * When prompted, sign in by using the **azureadm** username and the **Sap@hana2019!** password.
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, navigate to the **Local Server** view in the **Server Manager** window and disable **IE Enhanced Security Configuration**.
 
