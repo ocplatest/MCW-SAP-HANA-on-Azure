@@ -812,33 +812,3 @@ You will leverage the below artifact to complete this lab:
     ![On the Resources tab, the msl_SAPHana_HN1_HDB00 line now displays a blue dot.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task8_hawk_post_secondary_node_started_blue-dot.png "Resources tab")
 
 
-## After the Hands-on lab 
-
-Duration: 5 minutes
-
-After completing the hands-on lab, remove the resource group and any remaining resources.
-
-### Task 1: Remove the resource group containing all Azure resources deployed in this lab
-
-1.  From the lab computer, in [the Azure portal](http://portal.azure.com) , select the **Cloud Shell** icon.
-
-1.  If prompted, in the **Welcome to Azure Cloud Shell** window, select **Bash (Linux)**.
-
-1.  In the **Bash** session in the **Cloud Shell** pane, run the following to select the Azure subscription in which you will provision the Azure resources in this lab (replace the `[subscription_ID]` placeholder with the value of the subscriptionID parameter of the Azure subscription you used in this lab):
-
-    ```sh
-    az account set --subscription '[subscription_ID]'
-    ```
-
-1.  In the **Bash** session in the **Cloud Shell** pane, run the following to delete all resource groups and their resources that you provisioned in this lab:
-
-    ```sh
-    if [ az group exists --name hanav2-sn-RG ]
-    then
-         az group delete --name hanav2-sn-RG --no-wait --yes
-    fi
-    az group delete --name hanav2-ha-RG --no-wait --yes
-    az group delete --name mcw-hana-on-azure-cli-RG --no-wait --yes
-    ```
-
-You should follow all steps provided *after* attending the Hands-on lab.
