@@ -377,31 +377,9 @@ You will leverage the below artifact to complete this lab:
     ![The SAP HANA XS Advanced Cockpit displays the XSA Host: Home - User Management page with the new user created.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task3_xsa_new_user_created.png "XSA Host: Home - User Management page")
 
 
-### Task 3: Install SAP HANA Client on the Windows Server jumpbox Azure VM
+### Task 3: Connect to SAP HANA Client on the Windows Server jumpbox Azure VM
 
-> **Note**: It is possible to automate the client installation by adding the following section to the windows jumpbox section of the deployment template:
-
-    ```json
-    "components": [
-          "hana_client_windows"
-        ]
-    ```
-
-1.  Within the Remote Desktop session to Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start **Microsoft Edge**, and browse to [SAP HANA Client 2.0 download page](https://tools.hana.ondemand.com/#hanatools).
-
-1.  From the [SAP HANA Client 2.0 download page](https://tools.hana.ondemand.com/#hanatools), download the latest version of the HANA client for Windows x64 to the **Downloads** folder, extract its content, and double-click the **hdbsetup.exe** file to start the installation.
-
-1.  On the **Define Client Properties** page of the **SAP HANA Lifecycle Management** wizard, accept the default settings and select **Next**:
-
-    ![The Define Client Properties page displays the default settings.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task4_hana_2.0_install_settings.png "Define HANA 2.0 Client Properties install settings")
-
-1.  On the **Review & Confirm** page of the **SAP HANA Lifecycle Management** wizard, accept the default settings and select **Install**:
-
-    ![The Define Client Properties page displays the default settings.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task4_hana_2.0_install_confirm.png "Review & Confirm HANA 2.0 client install page")
-
-1.  Wait for the installation to complete and select **Finish**.
-
-1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start **Command Prompt**. 
+1.   SAP HANA Client is already installed on Windows Server jumpbox Azure VM **hanav2jmp-vm0**.  Within the Remote Desktop session to **hanav2jmp-vm0**, start **Command Prompt**. 
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, in the **Command Prompt** window, run the following to connect the newly installed SAP HANA Client 2.0 to the active HANA instance via the load balancer:
 
