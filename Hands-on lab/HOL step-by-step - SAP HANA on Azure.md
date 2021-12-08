@@ -67,6 +67,8 @@ HANA highly-available deployment
 
 ## Requirements
 
+> **Note**: All the requirements provided below and the related credentials are already available in the lab environment.  
+
 -   A Microsoft Azure subscription
 
 -   A work or school account with the Owner role in the Azure subscription and permissions to create service principals in the Azure Active Directory (Azure AD) tenant associated with the Azure subscription
@@ -250,11 +252,10 @@ You will leverage the below artifact to complete this lab:
 1.  Add the following entries to the host file (replace the `ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net` with the domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
 
     ```
-    10.101.2.10	hdb1-0
-    10.101.2.10	hdb1-0.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net>
-    10.101.2.11	hdb1-1
-    10.101.2.11	hdb1-1.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net>
+    10.101.2.10	hdb1-0.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-0
+    10.101.2.11	hdb1-1.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-1
     10.101.2.4	hdbha
+
     ```
 
     > **Note**: `10.101.2.4` is the IP address assigned to the front end of the Azure Internal Load Balancer that distributes network traffic to the HANA cluster hosted on two Azure VMs **hdb1-0** and **hdb1-1**.
