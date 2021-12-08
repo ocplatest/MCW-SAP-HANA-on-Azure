@@ -37,12 +37,11 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Exercise 2: Implement highly-available HANA instances by using Ansible](#exercise-2-Implement-highly-available-HANA-instances-by-using-Ansible)
         - [Task 1: Deploy highly-available Azure HANA instances by using Ansible](#task-2-Deploy-highly-available-Azure-HANA-instances-by-using-Ansible)
         - [Task 2: Review the deployment of highly-available HANA instances](#task-3-Review-the-deployment-of-highly-available-HANA-instances)
-        - [Task 3: Install SAP HANA Client on the Windows Server jumpbox Azure VM](#task-4-Install-SAP-HANA-Client-on-the-Windows-Server-jumpbox-Azure-VM)
+        - [Task 3: Connect to SAP HANA Client on the Windows Server jumpbox Azure VM](#task-4-Connect-to-SAP-HANA-Client-on-the-Windows-Server-jumpbox-Azure-VM)
         - [Task 4: Test failover of the clustered resources](#task-5-Test-failover-of-the-clustered-resources)
         - [Task 5: Test fencing of the clustered resources](#task-6-Test-fencing-of-the-clustered-resources)
         - [Task 6: Test migration of the clustered resources](#task-7-Test-migration-of-the-clustered-resources)
         - [Task 7: Test fencing of the clustered resources with the AUTOMATED_REGISTER parameter enabled](#task-8-Test-fencing-of-the-clustered-resources-with-the-AUTOMATED_REGISTER-parameter-enabled)
-    - [After the Hands-on lab](#after-the-hands-on-lab)
 
 
 <!-- /TOC -->
