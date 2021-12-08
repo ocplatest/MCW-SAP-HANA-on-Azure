@@ -262,9 +262,7 @@ You will leverage the below artifact to complete this lab:
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start Internet Explorer, browse to [Microsoft Edge for Business Download page](https://www.microsoft.com/en-us/edge/business/download), and use it to download and install Microsoft Edge. 
 
-1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start Microsoft Edge and browse to [the Azure portal](https://portal.azure.com). When prompted, sign in with the credentials you are using in this lab.
-
-1.  In the Azure portal, search for and select **Network security groups** and, on the **Network security groups** blade, select the entry representing the **nsg-db** network security group in the **hanav2-ha-RG** resource group.
+1.  Switch back to [the Azure portal](https://portal.azure.com) opened in your Jump VM, search for and select **Network security groups** and, on the **Network security groups** blade, select the entry representing the **nsg-db** network security group in the **hanav2-ha-RG** resource group.
 
     > **Note**: Make sure that you select the **nsg-db** network security group in the **hanav2-ha-RG** resource group (rather than the one in the **hanav2-sn-RG** resource group).
 
@@ -299,6 +297,8 @@ You will leverage the below artifact to complete this lab:
 1.  On the **HN1_hdbAlb-bePool** blade, in the **Virtual machines** section, select **Add**.
 
 1.  On the **Add virtual machines to backend pool** blade, select the entry referencing **hdb1-0-admin-nic-ip (10.101.1.10)** and **hdb1-1-admin-nic-ip (10.101.1.11)** and then select **Add**.
+
+     ![lb details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/lb.jpg "Resources tab")
 
     > **Note**: Make sure to select the IP Configuration entries that reference IP addresses on the **10.101.1.0/24** subnet. This is necessary to allow for the traffic originating from the Windows Server jumpbox Azure VM to reach the backend pool VMs.
 
