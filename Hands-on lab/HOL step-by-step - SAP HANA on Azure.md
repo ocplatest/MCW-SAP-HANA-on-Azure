@@ -102,8 +102,8 @@ HANA highly-available deployment
 
 * Password: <inject key="AzureAdUserPassword"></inject> 
 
-
-    ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")0
+    ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")
+    
 1.  Once you have successfully login to Azure, you can see 3 resource groups named **hanav2-sn-RG**, **mcw-hana-on-azure-cli-RG** and **hanav2-ha-RG**.
     * In **hanav2-sn-RG**, you can find the Jump VM and a storage account named **sapbitsXXXX**, where HANA software media download files are present.
     * In the **mcw-hana-on-azure-cli-RG**, you will be able see the pre-deployed Linux virtual machine that you will be using in the upcoming steps.
