@@ -250,8 +250,6 @@ You will leverage the below artifact to complete this lab:
 1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0** which public IP address you identified in the previous task. You can also find the IP Address from Azure portal. Go to Axure portal, open the resource group named  **hanav2-sn-RG** and open the **hanav2jmp-vm0** page to get the IP Address. 
     * When prompted, sign in by using the **azureadm** username and the **Sap@hana2019!** password.
 
-1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, navigate to the **Local Server** view in the **Server Manager** window and disable **IE Enhanced Security Configuration**.
-
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, open the **hosts** file located in **C:\\Windows\\System32\\drivers\\etc** in Notepad.
 
 1.  Add the following entries to the host file (replace the `ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net` with the domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
@@ -265,7 +263,6 @@ You will leverage the below artifact to complete this lab:
 
     > **Note**: `10.101.2.4` is the IP address assigned to the front end of the Azure Internal Load Balancer that distributes network traffic to the HANA cluster hosted on two Azure VMs **hdb1-0** and **hdb1-1**.
 
-1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, start Internet Explorer, browse to [Microsoft Edge for Business Download page](https://www.microsoft.com/en-us/edge/business/download), and use it to download and install Microsoft Edge. 
 
 1.  Switch back to [the Azure portal](https://portal.azure.com) opened in your Jump VM, search for and select **Network security groups** and, on the **Network security groups** blade, select the entry representing the **nsg-db** network security group in the **hanav2-ha-RG** resource group.
 
