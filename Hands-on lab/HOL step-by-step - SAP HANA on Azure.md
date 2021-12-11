@@ -119,7 +119,7 @@ HANA highly-available deployment
 
 Duration: 120 minutes
 
-In this exercise, you will implement a highly-available deployment of SAP HANA on Azure virtual machines (VMs). In this lab, you will be having access to **hanav2-ha-RG** where you can find the pre-deployed highly-available Azure infrastructure . You will use Ansible to deploy and configure all the SAP components. 
+In this exercise, you will implement a highly-available deployment of SAP HANA on Azure virtual machines (VMs). In this lab, you will have access to Azure resource group **hanav2-ha-RG** where you can find the pre-deployed highly-available Azure infrastructure . You will use Ansible to deploy and configure all the SAP components. 
 
 You will leverage the below artifact to complete this lab:
 
@@ -465,6 +465,10 @@ You will leverage the below artifact to complete this lab:
 
 1.  Switch to the SSH session to the **hdb1-0** Azure VM, type `exit` to return to the SSH session to the Linux jumpbox Azure VM.
 
+1.	Now  we will open a second SSH session hdb1-1.  Start another SSH client(Putty) and connect via SSH to the pre-provisioned Azure VM via the SSH VM DNS NAME you identified    in the lab environment details page. When prompted to sign in, authenticate by using the `SSH VM Username` and the `SSH VM Password` provided in the lab environment details     page.
+
+1.	Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. While running the cammand replace [IP_address] with the IP Address of  the RTI vm that you just copied in the previous step.
+
 1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-1** Azure VM running HANA by using its private IP address:
 
     ```sh
@@ -538,13 +542,6 @@ You will leverage the below artifact to complete this lab:
 
     ![The SAP HANA XS Advanced Cockpit displays the the XSA Host: Home - User Management page with the lab user1.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task5_xsa_new_user_displayed.png "XSA Host: Home - User Management page")
 
-1.  Switch to the SSH session to the **hb1-1** Azure VM, type `exit` twice to return to the SSH session to the Linux jumpbox Azure VM.
-
-1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-0** Azure VM running HANA by using its private IP address:
-
-    ```sh
-    ssh azureadm@10.101.1.10
-    ```
 
 1.  From within the SSH session to the **hdb1-0** Azure VM, run the following command to start the Pacemaker Cluster Resource Manager monitor on the first cluster node:
 
@@ -622,9 +619,9 @@ You will leverage the below artifact to complete this lab:
 
     > **Note**: The **msl_SAPHana_HN1_HDB00** resource does not automatically add **hdb1-1** as the passive node. This is expected, since the **AUTOMATED_REGISTER** parameter of the resource is set to **false**. 
 
-1.  Wait until the **hdb1-1** Azure VM is running, switch to the SSH session to the **hb1-0** Azure VM, and type `exit` to return to the SSH session to the Linux jumpbox Azure VM.
+1.  Wait until the **hdb1-1** Azure VM is running.
 
-1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-1** Azure VM running HANA by using its private IP address:
+1.  From within the SSH session to the Linux jumpbox Azure VM for **hdb1-1**, reconnect to the **hdb1-1** Azure VM running HANA by using its private IP address:
 
     ```sh
     ssh azureadm@10.101.1.11
@@ -726,14 +723,6 @@ You will leverage the below artifact to complete this lab:
 
     ![On the Resources tab, the SAPHanaTopology and cln_azure-events resources now include hdb1-0.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_post_migration_failed_start_error_message.png "Resources tab")
 
-1.  Switch to the SSH session to the **hb1-1** Azure VM, type `exit` twice to return to the SSH session to the Linux jumpbox Azure VM.
-
-1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-0** Azure VM running HANA by using its private IP address:
-
-    ```sh
-    ssh azureadm@10.101.1.10
-    ```
-
 1.  Within the SSH session to the **hdb1-0** Azure VM, run the following to switch to the security context of the **\<sid\>adm** account and, when prompted for its password, type **Help4you**:
 
     ```sh
@@ -792,7 +781,7 @@ You will leverage the below artifact to complete this lab:
 
     ![On the Resources tab, the SAPHana line now displays the fully operational status.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task8_hawk_fully_operational_with_hdb1-1_as_primary.png "Edit configuration menu entry")
 
-1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, in the Microsoft Edge window displaying the Azure portal, search for and select the **Virtual machines** entry, on the **Virtual machines** blade, select the entry representing the **hdb1-1** Azure VM hosting the currently active HANA instance, in the toolbar, select **Stop** and, when prompted for confirmation, select **Yes**. 
+1.  In the Azure portal, search for and select the **Virtual machines** entry, on the **Virtual machines** blade, select the entry representing the **hdb1-1** Azure VM hosting the currently active HANA instance, in the toolbar, select **Stop** and, when prompted for confirmation, select **Yes**. 
 
 1.  Within the Remote Desktop session to **hanav2jmp-vm0** Azure VM, switch to the Microsoft Edge window displaying the **SUSE Hawk Status** page at **https://hdb1-0:7630**, wait until the status of the **msl_SAPHana_HN1_HDB01** resource in the Microsoft Edge window displaying connection to **https://hdb1-0:7630** changes from a question mark to a blue dot, and verify that its location changed to **hdb1-0**.
 
