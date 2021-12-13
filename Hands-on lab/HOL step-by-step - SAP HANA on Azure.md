@@ -88,7 +88,39 @@ HANA highly-available deployment
 
 ## Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
 
-1.  From the lab computer, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with the Azure credentials. Please find the Azure credentials for the lab below. You can also find all the credentials for the lab in the **Environment details** page : 
+### Task 1: Connect to Lab VM using Remote Desktop Connection.
+
+Please follow the below steps and launch the VM using Remote Desktop Connection from your personal/work/local computer/laptop :
+
+1.  Copy the LabVM/JumpVM DNS Name, Username and Password from Environment Details page
+
+![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure1.jpg "Resources tab")
+
+1.  Click on the Start (1) button on your local desktop/laptop and search for Remote Desktop Connection (2). Next, select the Remote Desktop Connection (3) Application from the search result (as mentioned in the image below).
+
+![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rdp1.jpg "Resources tab")
+
+1.  Paste the VM DNS Name (1) in the Computer field and then, click on Connect (2) (as mentioned in the image below).
+
+![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rdp.jpg "Resources tab")
+
+1.  Click on More choices (as mentioned in the image below).
+
+![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/more.jpg "Resources tab")
+
+1.  Now, click on the Use a different account (as mentioned in the image below).
+
+![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/diff.jpg "Resources tab")
+
+1.  Now, enter the VM Admin username (1) and password (2) which you have copied from the Environment details page, and click on the Ok (3) button. Please add a dot followed by a back-slash “.\” before the Admin username (as mentioned in the image below).
+
+![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/usrname.jpg "Resources tab")
+
+1.  Next, click on the Yes button to accept the certificate and add in trusted certificates (as mentioned in the image below).
+
+![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/yes.jpg "Resources tab")
+
+1.  From the lab virtual machine, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with the Azure credentials. Please find the Azure credentials for the lab below. You can also find all the credentials for the lab in the **Environment details** page : 
 
 * Email/Username: <inject key="AzureAdUserEmail"></inject> 
 
@@ -239,7 +271,7 @@ You will leverage the below artifact to complete this lab:
 
 1.  Within the SSH session to the **hdb1-0** Azure VM, type `exit` to return to the `azureadm@hdb1-0:~>` prompt.
 
-1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**. The Windows jumpbox IP was identified in the previous step. You can also find the IP Address from Azure portal. Go to Axure portal, open the resource group named  **hanav2-sn-RG** and open the **hanav2jmp-vm0** page to get the IP Address. 
+1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**. The Windows jumpbox IP was identified in the previous step. You can also find the IP Address from Azure portal. Go to Axure portal, open the resource group named  **hanav2-sn-RG** and open the **hanav2jmp-vm0** page to get the IP Address. To initiate a Remote Desktop session, please follow the below steps.
     * When prompted, sign in by using the **azureadm** username and the **Sap@hana2019!** password.
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, open the **hosts** file located in **C:\\Windows\\System32\\drivers\\etc** in Notepad.
