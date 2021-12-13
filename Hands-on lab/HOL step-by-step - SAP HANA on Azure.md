@@ -656,6 +656,14 @@ You will leverage the below artifact to complete this lab:
 
     ![On the Resources tab, the SAPHana line now displays a blue dot.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_initial_status.png "Resources tab")
 
+1.  Then move to **Edit Configuration** tab and open **Constraints** tab and ensure any other constraint of Type “**Location**” from prior tests are cleared.
+    
+    ![constraints details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/const.jpg "Resources tab")
+    
+1.  The constraints screen should look as below:
+    
+    ![Constraints final details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/constf.jpg "Resources tab")
+
 1.  From the **SUSE Hawk Status** page at **https://hdb1-0:7630**, select the **Migrate** option of the **SAPHana** clustered resource.
 
     ![On the Resources tab, the SAPHana line now displays a menu containing the Maintenance, Migrate, Cleanup, Recent events, and Edit options.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task7_hawk_migrate_to_hdb1-1_menu.png "Resources tab")
