@@ -524,8 +524,7 @@ You will leverage the below artifact to complete this lab:
     default_domain = hdb1-1.UPDATE_DOMAIN_NAME.bx.internal.cloudapp.net
     api_url = https://hdb1-1.UPDATE_DOMAIN_NAME.bx.internal.cloudapp.net:30030
     ```
-1.  Once you have updated the entries in the file, click on **ctrl+[**, then type "**:wq**" to save the updates in the file.
-
+1.  Once you have updated the entries in the file, click on **ESC** button, then type "**:wq**" to save the updates in the file.
 
 1.  Within the SSH session to the **hdb1-1** Azure VM, run the following to reset the certificate for the controller API. 
 
