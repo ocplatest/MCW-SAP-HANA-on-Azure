@@ -96,7 +96,9 @@ HANA highly-available deployment
 Please follow the below steps and launch the VM using Remote Desktop Connection from your personal/work/local computer/laptop :
 
 1.  Copy the LabVM/JumpVM DNS Name, Username and Password from Environment Details page
-    ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure1.jpg "Resources tab")
+    
+    ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure2.jpg "Resources tab")
+    
 1.  Click on the Start (1) button on your local desktop/laptop and search for Remote Desktop Connection (2). Next, select the Remote Desktop Connection (3) Application from the search result (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rdp2.jpg "Resources tab")
