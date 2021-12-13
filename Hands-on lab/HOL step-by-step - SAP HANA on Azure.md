@@ -52,11 +52,11 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 In this hands-on lab, you will step through the implementation of a highly-available SAP HANA deployments on Microsoft Azure virtual machines running SUSE Linux Enterprise Server. 
 
-After its completion, you will be able to perform highly-available SAP HANA deployments by using Terraform and Ansible, validate both types of deployments, test failover scenarios, and remove the deployed resources.
+After its completion, you will be able to perform highly-available SAP HANA deployments by using Ansible, validate both types of deployments, test failover scenarios, and remove the deployed resources.
 
 ## Overview
 
-In this hands-on lab, you are working with Contoso to develop a process of implementing an automated deployment of highly-available SAP HANA instances on Azure virtual machines (VMs). Your tasks will include the preparation for the deployment process, invoking the deployment, validating the outcome of the deployment, and removal of all the deployed resources.
+In this hands-on lab, you will develop a process of implementing an automated deployment of highly-available SAP HANA instances on Azure virtual machines (VMs). Your tasks will include the preparation for the deployment process, invoking the deployment, validating the outcome of the deployment, and removal of all the deployed resources.
 
 ## Solution architecture
 
@@ -66,7 +66,7 @@ HANA highly-available deployment
 
 ## Requirements
 
-> **Note**: All the requirements provided below and the related credentials are already available in the lab environment.  
+> **Note**: All the requirements provided below and the related credentials are already taken care of in the lab environment and listed only to highlight since part of the lab are pre-provisioned.
 
 -   A Microsoft Azure subscription
 
@@ -85,14 +85,6 @@ HANA highly-available deployment
     -   A modern web browser (Microsoft Edge, Google Chrome, or Mozilla Firefox)
 
    > **Note**: You can use the Virtual Machine provided in the lab environment which has all the pre-requisites applications installed.
-
-## Help references
-
-|    |            |
-|----------|:-------------:|
-| **Description** | **Links** |
-| Automated SAP Deployments in Azure Cloud | <https://github.com/Azure/sap-hana/> |
-
 
 ## Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
 
@@ -148,7 +140,7 @@ You will leverage the below artifact to complete this lab:
 
     ![linvm details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rti.jpg "Resources tab")
 
-1.  Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. While running the cammand replace [IP_address] with the IP Address of the RTI vm that you just copied in the previous step.
+1.  Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. While running the cammand replace [IP_address] with the IP Address of the **rti** vm that you just copied in the previous step.
 
     ```sh
     ssh azureadm@[IP_address]
@@ -247,7 +239,7 @@ You will leverage the below artifact to complete this lab:
 
 1.  Within the SSH session to the **hdb1-0** Azure VM, type `exit` to return to the `azureadm@hdb1-0:~>` prompt.
 
-1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0** which public IP address you identified in the previous task. You can also find the IP Address from Azure portal. Go to Axure portal, open the resource group named  **hanav2-sn-RG** and open the **hanav2jmp-vm0** page to get the IP Address. 
+1.  Switch to the lab computer and initiate a Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**. The Windows jumpbox IP was identified in the previous step. You can also find the IP Address from Azure portal. Go to Axure portal, open the resource group named  **hanav2-sn-RG** and open the **hanav2jmp-vm0** page to get the IP Address. 
     * When prompted, sign in by using the **azureadm** username and the **Sap@hana2019!** password.
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, open the **hosts** file located in **C:\\Windows\\System32\\drivers\\etc** in Notepad.
@@ -426,7 +418,7 @@ You will leverage the below artifact to complete this lab:
 
     ![The same page displays with the SAPHana resource details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/ex2task5_hawk_initial_status.png "SAPHana Resource details page")
 
-1.  Switch to the SSH session to **hb1-0** and run the following to stop the Pacemaker Cluster Resource Manager monitor on the first cluster node:
+1.  Switch to the SSH session to **hdb1-0** and run the following to stop the Pacemaker Cluster Resource Manager monitor on the first cluster node:
 
     ```sh
     sudo service pacemaker stop
@@ -464,7 +456,7 @@ You will leverage the below artifact to complete this lab:
 
 1.	Now  we will open a second SSH session hdb1-1.  Start another SSH client(Putty) and connect via SSH to the pre-provisioned Azure VM via the SSH VM DNS NAME you identified    in the lab environment details page. When prompted to sign in, authenticate by using the `SSH VM Username` and the `SSH VM Password` provided in the lab environment details     page.
 
-1.	Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. While running the cammand replace [IP_address] with the IP Address of  the RTI vm that you just copied in the previous step.
+1.	Within the SSH session to the Azure VM , run the following to connect via SSH to the Linux jumpbox VM. While running the cammand replace [IP_address] with the IP Address of  the **rti** vm that you just copied in the previous step.
 
 1.  From within the SSH session to the Linux jumpbox Azure VM, connect to the **hdb1-1** Azure VM running HANA by using its private IP address:
 
@@ -530,6 +522,8 @@ You will leverage the below artifact to complete this lab:
     > **Note**: Take the note of the URL designating the access point of xsa-cockpit. You will need it next.
 
 1.  Switch back to the Remote Desktop session to the **hanav2jmp-vm0** Azure VM and, start Microsoft Edge, and navigate to the XSA Cockpit URL you identified in the previous step. 
+
+> **Note**: Even after successful execution of steps to confirm XSA application is running fine, the application can take few minutes to open and might give Service error 503 in browser when tried.
 
 1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net (unsafe)**. 
 
