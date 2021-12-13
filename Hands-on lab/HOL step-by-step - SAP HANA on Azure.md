@@ -17,7 +17,8 @@ Information in this document, including URL and other Internet Web site referenc
 
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
-The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.![azure1](https://user-images.githubusercontent.com/29173745/145866861-05e8192a-8ede-4f05-896c-025c6733e4fc.jpg)
+
 
 © 2021 Microsoft Corporation. All rights reserved.
 
@@ -33,7 +34,9 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
     - [Solution architecture](#solution-architecture)
     - [Requirements](#requirements)
     - [Help references](#help-references)
-    - Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
+    - Exercise 1: connect to the Lab Virtual Machine and Linux virtual machine hosting lab deployment tools
+        - Task 1 : Connect to Lab VM using Remote Desktop Connection
+        - Task 2 : Connect to Linux virtual machine.
     - [Exercise 2: Implement highly-available HANA instances by using Ansible](#exercise-2-Implement-highly-available-HANA-instances-by-using-Ansible)
         - [Task 1: Deploy highly-available Azure HANA instances by using Ansible](#task-2-Deploy-highly-available-Azure-HANA-instances-by-using-Ansible)
         - [Task 2: Review the deployment of highly-available HANA instances](#task-3-Review-the-deployment-of-highly-available-HANA-instances)
@@ -86,16 +89,14 @@ HANA highly-available deployment
 
    > **Note**: You can use the Virtual Machine provided in the lab environment which has all the pre-requisites applications installed.
 
-## Exercise 1: connect to the Linux virtual machine hosting lab deployment tools
+## Exercise 1: Connect to Lab virtual machine and Linux virtual machine hosting lab deployment tools
 
-### Task 1: Connect to Lab VM using Remote Desktop Connection.
+### Task 1: Connect to Lab VM using Remote Desktop Connection
 
 Please follow the below steps and launch the VM using Remote Desktop Connection from your personal/work/local computer/laptop :
 
 1.  Copy the LabVM/JumpVM DNS Name, Username and Password from Environment Details page
-
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure1.jpg "Resources tab")
-
 1.  Click on the Start (1) button on your local desktop/laptop and search for Remote Desktop Connection (2). Next, select the Remote Desktop Connection (3) Application from the search result (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rdp1.jpg "Resources tab")
@@ -119,6 +120,8 @@ Please follow the below steps and launch the VM using Remote Desktop Connection 
 1.  Next, click on the Yes button to accept the certificate and add in trusted certificates (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/yes.jpg "Resources tab")
+
+### Task 2 : Connect to Linux virtual machine.
 
 1.  From the lab virtual machine, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with the Azure credentials. Please find the Azure credentials for the lab below. You can also find all the credentials for the lab in the **Environment details** page : 
 
