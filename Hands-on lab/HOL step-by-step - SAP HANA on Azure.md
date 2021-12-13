@@ -122,9 +122,9 @@ Please follow the below steps and launch the VM using Remote Desktop Connection 
 
 1.  From the lab virtual machine, start a Web browser, navigate to the Azure portal at https://portal.azure.com and sign in with the Azure credentials. Please find the Azure credentials for the lab below. You can also find all the credentials for the lab in the **Environment details** page : 
 
-* Email/Username: <inject key="AzureAdUserEmail"></inject> 
+    * Email/Username: <inject key="AzureAdUserEmail"></inject> 
 
-* Password: <inject key="AzureAdUserPassword"></inject> 
+    * Password: <inject key="AzureAdUserPassword"></inject> 
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure.jpg "Resources tab")
     
@@ -276,11 +276,11 @@ You will leverage the below artifact to complete this lab:
 
 1.  Within the Remote Desktop session to the Windows Server jumpbox Azure VM **hanav2jmp-vm0**, open the **hosts** file located in **C:\\Windows\\System32\\drivers\\etc** in Notepad.
 
-1.  Add the following entries to the host file (replace the `ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net` with the domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
+1.  Add the following entries to the host file (replace the `<ADD_THE_DOMAIN_HERE>` with the domain name portion of the xsa-cockpit URL you identified earlier in this task. The domain name should look like this : `x5tbkhga0xbe1khg2cz1nccnvb.bx.internal.cloudapp.net` ), save your changes, and close the file:
 
     ```
-    10.101.2.10	hdb1-0.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-0
-    10.101.2.11	hdb1-1.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-1
+    10.101.2.10	hdb1-0.<ADD_THE_DOMAIN_HERE> hdb1-0
+    10.101.2.11	hdb1-1.<ADD_THE_DOMAIN_HERE> hdb1-1
     10.101.2.4	hdbha
 
     ```
@@ -513,11 +513,11 @@ You will leverage the below artifact to complete this lab:
 
 1.  Within the editor interface, update the value of the **default_domain** and **api_url** parameters to reference the **hdb1-1** cluster node and close the file, saving your changes. 
 
-    > **Note**: The entries you edit should resemble the following (the domain name will be different):
+    > **Note**: You just need to update **hdb1-0** to **hdb1-1** in both default_domain and api_url. The entries you edit should resemble the following (the domain name will be different):
 
     ```sh
-    default_domain = hdb1-1.<UPDATE_DOMAIN_NAME>.bx.internal.cloudapp.net
-    api_url = https://hdb1-1.<UPDATE_DOMAIN_NAME>.bx.internal.cloudapp.net:30030
+    default_domain = hdb1-1.UPDATE_DOMAIN_NAME.bx.internal.cloudapp.net
+    api_url = https://hdb1-1.UPDATE_DOMAIN_NAME.bx.internal.cloudapp.net:30030
     ```
 1.  Once you have updated the entries in the file, click on **ctrl+[**, then type "**:wq**" to save the updates in the file.
 
@@ -555,7 +555,7 @@ You will leverage the below artifact to complete this lab:
 
 1.  Switch back to the Remote Desktop session to the **hanav2jmp-vm0** Azure VM and, start Microsoft Edge, and navigate to the XSA Cockpit URL you identified in the previous step. 
 
-> **Note**: Even after successful execution of steps to confirm XSA application is running fine, the application can take few minutes to open and might give Service error 503 in browser when tried.
+    > **Note**: Even after successful execution of steps to confirm XSA application is running fine, the application can take few minutes to open and might give Service error 503 in browser when tried.
 
 1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net (unsafe)**. 
 
