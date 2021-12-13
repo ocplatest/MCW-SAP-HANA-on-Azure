@@ -99,27 +99,27 @@ Please follow the below steps and launch the VM using Remote Desktop Connection 
     
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/azure2.jpg "Resources tab")
     
-1.  Click on the Start (1) button on your local desktop/laptop and search for Remote Desktop Connection (2). Next, select the Remote Desktop Connection (3) Application from the search result (as mentioned in the image below).
+1.  Click on the **Start** button on your local desktop/laptop and search for `rdp`. Next, select the **Remote Desktop Connection** Application from the search result (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rdp2.jpg "Resources tab")
 
-1.  Paste the VM DNS Name (1) in the Computer field and then, click on Connect (2) (as mentioned in the image below).
+1.  Paste the **VM DNS Name** in the Computer field and then, click on **Connect** (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/rdp.jpg "Resources tab")
 
-1.  Click on More choices (as mentioned in the image below).
+1.  Click on **More choices** (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/more.jpg "Resources tab")
 
-1.  Now, click on the Use a different account (as mentioned in the image below).
+1.  Now, click on the **Use a different account** (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/diff.jpg "Resources tab")
 
-1.  Now, enter the VM Admin username (1) and password (2) which you have copied from the Environment details page, and click on the Ok (3) button. Please add a dot followed by a back-slash “.\” before the Admin username (as mentioned in the image below).
+1.  Now, enter the **VM Admin username** (1) and **password** (2) which you have copied from the Environment details page, and click on the **Ok** (3) button. Please add a dot followed by a back-slash “.\” before the Admin username (as mentioned in the image below).
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/usrname.jpg "Resources tab")
 
-1.  Next, click on the Yes button to accept the certificate and add in trusted certificates (as mentioned in the image below).
+1.  Next, click on the **Yes** button to accept the certificate and add in trusted certificates (as mentioned in the image below). Once the connection is established, you can access the Lab VM.
 
     ![Azure details.](images/Hands-onlabstep-by-step-SAPHANAonAzureimages/media/yes.jpg "Resources tab")
 
