@@ -247,9 +247,9 @@ You will leverage the below artifact to complete this lab:
 1.  Add the following entries to the host file (replace the `ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net` with the domain name portion of the xsa-cockpit URL you identified earlier in this task), save your changes, and close the file:
 
     ```
-    10.101.2.10	hdb1-0.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-0
-    10.101.2.11	hdb1-1.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-1
-    10.101.2.4	hdbha
+    10.101.1.10	hdb1-0.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-0
+    10.101.1.11	hdb1-1.<ADD_THE_DOMAIN_HERE.bx.internal.cloudapp.net> hdb1-1
+    10.101.1.4	hdbha
 
     ```
 
