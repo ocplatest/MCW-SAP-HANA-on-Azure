@@ -555,7 +555,7 @@ You will leverage the below artifact to complete this lab:
 
 1.  Switch back to the Remote Desktop session to the **hanav2jmp-vm0** Azure VM and, start Microsoft Edge, and navigate to the XSA Cockpit URL you identified in the previous step. 
 
-    > **Note**: Even after successful execution of steps to confirm XSA Cockpit URL is running fine, In case you get the 503 Service not Available error in browser, please re-try after 5 mins
+    > **Note**: Even after successful execution of steps to confirm XSA Cockpit URL is running fine, in case you get the "503 Service not Available" error in browser, please re-try after 5 mins
 
 1.  Disregard the **This connection isn't private** error message, select **Advanced**, and then select **Continue to https://hdb1-1.2dqgcpdju1ee1chgs50fkwq2yg.bx.internal.cloudapp.net (unsafe)**. 
 
